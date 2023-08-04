@@ -1,0 +1,70 @@
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(230, 223, 223, 0.548);
+        position: absolute;
+        
+    }
+    header {
+
+        color: black;
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        height: 60px;
+        
+    }
+    header a{
+        text-decoration: none;
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+       
+        
+    }
+    header a:hover{
+        color: white;
+        background-color: rgb(221, 221, 29);
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 20px;
+        
+    }
+    #pasteis{
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 2%;
+        display: flex;
+        
+
+    }
+    .produto-single{
+        width: 33.3%;
+        margin: 10px;
+        padding: 20px 10px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        
+    }
+    .produto-single img{
+        width: 180px;
+        height: 150px;
+        border-radius: 10px ;
+
+    }
+    .produto-single p {
+        margin: 0;
+        padding: 10px 0;
+        white-space: pre-wrap; 
+    }
+    .produto-single a {
+    text-decoration: none;
+    color: black;
+    
+    }
+
