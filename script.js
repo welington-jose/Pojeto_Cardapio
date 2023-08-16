@@ -30,7 +30,7 @@ const pasteis = [
         pasteis.forEach((val)=>{
             conteinerProdutos.innerHTML +=`
             
-            <div class="produto-single">
+            <div class="produto-single-past">
             <span class="quantidade">${val.quantidade}</span>
             <img src="${val.img}" data-key=${val.id} class="adicionar"/>
             <p>${val.nome}</p>
@@ -94,7 +94,7 @@ inicializarProdutos();
                 bebidas.forEach((val)=>{
                     conteinerProdutos.innerHTML +=`
                     
-                    <div class="produto-single">
+                    <div class="produto-single-bbd">
                     <span class="quantidade">${val.quantidade}</span>
                     <img src="${val.img}" data-key=${val.id} class="adicionar"/>
                     <p>${val.nome}</p>
@@ -129,3 +129,5 @@ inicializarProdutos();
                         return false;
                     });
                 });
+
+                
