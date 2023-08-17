@@ -25,38 +25,48 @@ const pasteis = [
     },
 ]
 
-    inicializarProdutos = ()=>{
-        var conteinerProdutos = document.getElementById('pasteis');
-        pasteis.forEach((val)=>{
-            conteinerProdutos.innerHTML +=`
+inicializarProdutos = () => {
+    var conteinerProdutos = document.getElementById('pasteis');
+    pasteis.forEach((val) => {
+        conteinerProdutos.innerHTML += `
             
-            <div class="produto-single-past">
+            <div class="produto-single-past" data-key=${val.id} />
             <span class="quantidade">${val.quantidade}</span>
-            <img src="${val.img}" data-key=${val.id} class="adicionar"/>
+            <img src="${val.img}"/>
             <p>${val.nome}</p>
             <p>${val.valor}</p>
             
             </div>
             `
-             
-        });
-    };
-    
-inicializarProdutos();  
+        const savedQuantidade = localStorage.getItem(`quantidade_${val.id}`);
+        if (savedQuantidade) {
+            val.quantidade = parseInt(savedQuantidade);
+            const quantidadeElement = conteinerProdutos.querySelector(`[data-key="${val.id}"] .quantidade`);
+            if (quantidadeElement) {
+                quantidadeElement.textContent = savedQuantidade;
+                quantidadeElement.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
+            }
+        }
 
-        var linksPasteis = document.querySelectorAll('.adicionar')
+    });
+};
 
-        linksPasteis.forEach((link)=>{
-            link.addEventListener('click',()=>{
-                const key = link.getAttribute('data-key');
-                pasteis[key].quantidade++;
+inicializarProdutos();
 
-                const quantidadeElement = link.parentElement.querySelector('.quantidade');
-                 if (quantidadeElement) {
-                  quantidadeElement.textContent = pasteis[key].quantidade;
-                  quantidadeElement.style.visibility = pasteis[key].quantidade > 0 ? 'visible' : 'hidden';
-}
+var linksPasteis = document.querySelectorAll('.produto-single-past')
+
+linksPasteis.forEach((link) => {
+    link.addEventListener('click', () => {
+        const key = link.getAttribute('data-key');
+        pasteis[key].quantidade++;
+
+        const quantidadeElement = link.querySelector('.quantidade');
+        if (quantidadeElement) {
+            quantidadeElement.textContent = pasteis[key].quantidade;
+            quantidadeElement.style.visibility = pasteis[key].quantidade > 0 ? 'visible' : 'hidden';
+        }
+        localStorage.setItem(`quantidade_${key}`, pasteis[key].quantidade);
         return false;
-                });
-        });
-        
+    });
+});
+
