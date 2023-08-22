@@ -9,7 +9,7 @@ const pasteis = [
     },
     {
         id: 1,
-        nome: 'Pastel de frango',
+        nome: 'Patel de frango',
         img: 'imagens/pasteis/pastel-frango.jpg',
         quantidade: 0,
         valor: 'R$ 6,00',
@@ -23,37 +23,50 @@ const pasteis = [
         valor: 'R$ 6,00',
 
     },
-]
+];
 
-inicializarProdutos = () => {
+inicializarPasteis = () => {
+
+       
     var conteinerProdutos = document.getElementById('pasteis');
     pasteis.forEach((val) => {
-        conteinerProdutos.innerHTML += `
-            
-            <div class="produto-single-past" data-key=${val.id} />
-            <span class="quantidade">${val.quantidade}</span>
-            <img src="${val.img}"/>
-            <p>${val.nome}</p>
-            <p>${val.valor}</p>
-            
-            </div>
-            `
-        const savedQuantidade = localStorage.getItem(`quantidade_${val.id}`);
+        const produtoDiv = document.createElement('div');
+        produtoDiv.classList.add('produto-single-past');
+
+        const produtoContent = `
+            <div class="clicavel-past" data-key=${val.id}>
+                <span class="quantidade">${val.quantidade}</span>
+                <img src="${val.img}"/>
+                <p>${val.nome}</p>
+                <p>${val.valor}</p>
+            </div> 
+            <button class="diminuir-qtd" data-key=${val.id}>-</button>
+        `;
+
+        produtoDiv.innerHTML = produtoContent;
+        conteinerProdutos.appendChild(produtoDiv);
+
+        const savedQuantidade = localStorage.getItem(`quantidade_pasteis_${val.id}`);
         if (savedQuantidade) {
             val.quantidade = parseInt(savedQuantidade);
-            const quantidadeElement = conteinerProdutos.querySelector(`[data-key="${val.id}"] .quantidade`);
+            const quantidadeElement = produtoDiv.querySelector('.quantidade');
             if (quantidadeElement) {
                 quantidadeElement.textContent = savedQuantidade;
                 quantidadeElement.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
             }
-        }
 
+            const diminuirBotao = produtoDiv.querySelector('.diminuir-qtd');
+            if (diminuirBotao) {
+                diminuirBotao.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
+            }
+        }
     });
 };
 
-inicializarProdutos();
+inicializarPasteis ();
 
-var linksPasteis = document.querySelectorAll('.produto-single-past')
+
+var linksPasteis = document.querySelectorAll('.clicavel-past');
 
 linksPasteis.forEach((link) => {
     link.addEventListener('click', () => {
@@ -63,10 +76,39 @@ linksPasteis.forEach((link) => {
         const quantidadeElement = link.querySelector('.quantidade');
         if (quantidadeElement) {
             quantidadeElement.textContent = pasteis[key].quantidade;
-            quantidadeElement.style.visibility = pasteis[key].quantidade > 0 ? 'visible' : 'hidden';
+            quantidadeElement.style.visibility = 'visible';
         }
-        localStorage.setItem(`quantidade_${key}`, pasteis[key].quantidade);
+
+        const diminuirBotao = link.parentElement.querySelector('.diminuir-qtd');
+        if (diminuirBotao) {
+            diminuirBotao.style.visibility = 'visible';
+        }
+
+        localStorage.setItem(`quantidade_pasteis_${key}`, pasteis[key].quantidade);
         return false;
     });
 });
 
+const diminuirBotao = document.querySelectorAll('.diminuir-qtd');
+diminuirBotao.forEach((botao) => {
+    botao.addEventListener('click', () => {
+        const key = botao.getAttribute('data-key');
+        pasteis[key].quantidade--;
+
+        const quantidadeElement = botao.parentElement.querySelector('.quantidade');
+        const botaoDiminuir = botao.parentElement.querySelector('.diminuir-qtd');
+
+        if (pasteis[key].quantidade > 0) {
+            botaoDiminuir.style.visibility = 'visible';
+        } else {
+            botaoDiminuir.style.visibility = 'hidden';
+        }
+
+        if (quantidadeElement) {
+            quantidadeElement.textContent = pasteis[key].quantidade;
+            quantidadeElement.style.visibility = pasteis[key].quantidade > 0 ? 'visible' : 'hidden';
+        }
+
+        localStorage.setItem(`quantidade_pasteis_${key}`, pasteis[key].quantidade);
+    });
+});

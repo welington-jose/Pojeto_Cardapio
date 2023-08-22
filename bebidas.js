@@ -23,56 +23,92 @@ const bebidas = [
         valor: 'R$ 4,00',
 
     },
-]
+];
 
 inicializarBebidas = () => {
+
+       
     var conteinerProdutos = document.getElementById('bebidas');
     bebidas.forEach((val) => {
-        conteinerProdutos.innerHTML += `
-                        
-                <div class="produto-single-bbd" data-key=${val.id}>
+        const produtoDiv = document.createElement('div');
+        produtoDiv.classList.add('produto-single-bbd');
+
+        const produtoContent = `
+            <div class="clicavel-bbd" data-key=${val.id}>
                 <span class="quantidade">${val.quantidade}</span>
                 <img src="${val.img}"/>
                 <p>${val.nome}</p>
                 <p>${val.valor}</p>
-                    </div>
-                        `
+            </div>
+            <button class="diminuir-qtd" data-key=${val.id}>-</button>
+        `;
 
-        const savedQuantidade = localStorage.getItem(`quantidade_${val.id}`);
+        produtoDiv.innerHTML = produtoContent;
+        conteinerProdutos.appendChild(produtoDiv);
+
+        const savedQuantidade = localStorage.getItem(`quantidade_bebidas_${val.id}`);
         if (savedQuantidade) {
             val.quantidade = parseInt(savedQuantidade);
-            const quantidadeElement = conteinerProdutos.querySelector(`[data-key="${val.id}"] .quantidade`);
+            const quantidadeElement = produtoDiv.querySelector('.quantidade');
             if (quantidadeElement) {
                 quantidadeElement.textContent = savedQuantidade;
                 quantidadeElement.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
             }
+
+            const diminuirBotao = produtoDiv.querySelector('.diminuir-qtd');
+            if (diminuirBotao) {
+                diminuirBotao.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
+            }
         }
-
     });
-
 };
 
-
-inicializarBebidas();
-
+inicializarBebidas ();
 
 
-var linksBebidas = document.querySelectorAll('.produto-single-bbd')
+var linksBebidas = document.querySelectorAll('.clicavel-bbd');
 
 linksBebidas.forEach((link) => {
     link.addEventListener('click', () => {
         const key = link.getAttribute('data-key');
         bebidas[key].quantidade++;
 
-
         const quantidadeElement = link.querySelector('.quantidade');
         if (quantidadeElement) {
             quantidadeElement.textContent = bebidas[key].quantidade;
-            quantidadeElement.style.visibility = bebidas[key].quantidade > 0 ? 'visible' : 'hidden';
-
+            quantidadeElement.style.visibility = 'visible';
         }
-        localStorage.setItem(`quantidade_${key}`, bebidas[key].quantidade);
+
+        const diminuirBotao = link.parentElement.querySelector('.diminuir-qtd');
+        if (diminuirBotao) {
+            diminuirBotao.style.visibility = 'visible';
+        }
+
+        localStorage.setItem(`quantidade_bebidas_${key}`, bebidas[key].quantidade);
         return false;
     });
 });
 
+const diminuirBotao = document.querySelectorAll('.diminuir-qtd');
+diminuirBotao.forEach((botao) => {
+    botao.addEventListener('click', () => {
+        const key = botao.getAttribute('data-key');
+        bebidas[key].quantidade--;
+
+        const quantidadeElement = botao.parentElement.querySelector('.quantidade');
+        const botaoDiminuir = botao.parentElement.querySelector('.diminuir-qtd');
+
+        if (bebidas[key].quantidade > 0) {
+            botaoDiminuir.style.visibility = 'visible';
+        } else {
+            botaoDiminuir.style.visibility = 'hidden';
+        }
+
+        if (quantidadeElement) {
+            quantidadeElement.textContent = bebidas[key].quantidade;
+            quantidadeElement.style.visibility = bebidas[key].quantidade > 0 ? 'visible' : 'hidden';
+        }
+
+        localStorage.setItem(`quantidade_bebidas_${key}`, bebidas[key].quantidade);
+    });
+});
