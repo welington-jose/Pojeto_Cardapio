@@ -20,7 +20,8 @@ const bebidas = [
         nome: 'Guaraná lata 300ml',
         img: 'imagens/bebidas/guarana_lt300.jpg',
         quantidade: 0,
-        valor: 'R$ 4,00',
+        moeda: "R$",
+        valor: 4.00,
 
     },
 ];
@@ -42,25 +43,31 @@ inicializarBebidas = () => {
             </div>
             <button class="diminuir-qtd" data-key=${val.id}>-</button>
         `;
-
+    
         produtoDiv.innerHTML = produtoContent;
         conteinerProdutos.appendChild(produtoDiv);
 
         const savedQuantidade = localStorage.getItem(`quantidade_bebidas_${val.id}`);
-        if (savedQuantidade) {
-            val.quantidade = parseInt(savedQuantidade);
-            const quantidadeElement = produtoDiv.querySelector('.quantidade');
-            if (quantidadeElement) {
-                quantidadeElement.textContent = savedQuantidade;
-                quantidadeElement.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
-            }
+        const savedValor = localStorage.getItem(`valor_bebidas_${val.id}`);
+        const savedNome = localStorage.getItem(`nome_bebidas_${val.id}`);
+        const savedImg = localStorage.getItem(`img_bebidas_${val.id}`);
 
-            const diminuirBotao = produtoDiv.querySelector('.diminuir-qtd');
-            if (diminuirBotao) {
-                diminuirBotao.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
-            }
-        }
-    });
+if (savedQuantidade && savedValor && savedNome && savedImg) {
+    val.quantidade = parseInt(savedQuantidade);
+    const quantidadeElement = produtoDiv.querySelector('.quantidade');
+    if (quantidadeElement) {
+        quantidadeElement.textContent = savedQuantidade;
+        quantidadeElement.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
+    }
+
+    const diminuirBotao = produtoDiv.querySelector('.diminuir-qtd');
+    if (diminuirBotao) {
+        diminuirBotao.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
+    }
+}
+
+    
+});
 };
 
 inicializarBebidas ();
@@ -85,6 +92,11 @@ linksBebidas.forEach((link) => {
         }
 
         localStorage.setItem(`quantidade_bebidas_${key}`, bebidas[key].quantidade);
+        localStorage.setItem(`valor_bebidas_${key}`, bebidas[key].valor);
+        localStorage.setItem(`nome_bebidas_${key}`, bebidas[key].nome);
+        localStorage.setItem(`img_bebidas_${key}`, bebidas[key].img);
+
+
         return false;
     });
 });
@@ -110,5 +122,9 @@ diminuirBotao.forEach((botao) => {
         }
 
         localStorage.setItem(`quantidade_bebidas_${key}`, bebidas[key].quantidade);
+        localStorage.setItem(`valor_bebidas_${key}`, bebidas[key].valor);
+        localStorage.setItem(`nome_bebidas_${key}`, bebidas[key].nome);
+        localStorage.setItem(`img_bebidas_${key}`, bebidas[key].img);
+
     });
 });

@@ -85,6 +85,7 @@ linksPasteis.forEach((link) => {
         }
 
         localStorage.setItem(`quantidade_pasteis_${key}`, pasteis[key].quantidade);
+       
         return false;
     });
 });
