@@ -1,6 +1,4 @@
-
-function adicionarItensPedido() {
-
+function adicionarItensPedido() { // Abra um bloco de código com '{' aqui
     const pedido = document.getElementById('pedido');
 
     for (let i = 0; i < localStorage.length; i++) {
@@ -21,14 +19,17 @@ function adicionarItensPedido() {
                 const valorTotal = valorBebidaNumero * quantidade;
 
                 const itemPedido = document.createElement('div');
-                itemPedido.innerHTML = `
-                
+                itemPedido.innerHTML =
+                    `
         <p><img src=${imgBebida} width="50px">  ${nomeBebida} QTD ${quantidade}    Total R$ ${valorTotal.toFixed(2)} <p>  
     
     `;
+
                 pedido.appendChild(itemPedido);
             }
         }
     }
-}
-adicionarItensPedido()
+} // Feche o bloco de código com '}' aqui
+
+// Chame a função para adicionar os itens do pedido com quantidade maior que zero ao pedido
+adicionarItensPedido();

@@ -20,15 +20,14 @@ const bebidas = [
         nome: 'Guaraná lata 300ml',
         img: 'imagens/bebidas/guarana_lt300.jpg',
         quantidade: 0,
-        moeda: "R$",
-        valor: 4.00,
+        valor: "R$ 4,00",
 
     },
 ];
 
 inicializarBebidas = () => {
 
-       
+
     var conteinerProdutos = document.getElementById('bebidas');
     bebidas.forEach((val) => {
         const produtoDiv = document.createElement('div');
@@ -43,7 +42,7 @@ inicializarBebidas = () => {
             </div>
             <button class="diminuir-qtd" data-key=${val.id}>-</button>
         `;
-    
+
         produtoDiv.innerHTML = produtoContent;
         conteinerProdutos.appendChild(produtoDiv);
 
@@ -52,25 +51,25 @@ inicializarBebidas = () => {
         const savedNome = localStorage.getItem(`nome_bebidas_${val.id}`);
         const savedImg = localStorage.getItem(`img_bebidas_${val.id}`);
 
-if (savedQuantidade && savedValor && savedNome && savedImg) {
-    val.quantidade = parseInt(savedQuantidade);
-    const quantidadeElement = produtoDiv.querySelector('.quantidade');
-    if (quantidadeElement) {
-        quantidadeElement.textContent = savedQuantidade;
-        quantidadeElement.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
-    }
+        if (savedQuantidade && savedValor && savedNome && savedImg) {
+            val.quantidade = parseInt(savedQuantidade);
+            const quantidadeElement = produtoDiv.querySelector('.quantidade');
+            if (quantidadeElement) {
+                quantidadeElement.textContent = savedQuantidade;
+                quantidadeElement.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
+            }
 
-    const diminuirBotao = produtoDiv.querySelector('.diminuir-qtd');
-    if (diminuirBotao) {
-        diminuirBotao.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
-    }
-}
+            const diminuirBotao = produtoDiv.querySelector('.diminuir-qtd');
+            if (diminuirBotao) {
+                diminuirBotao.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
+            }
+        }
 
-    
-});
+
+    });
 };
 
-inicializarBebidas ();
+inicializarBebidas();
 
 
 var linksBebidas = document.querySelectorAll('.clicavel-bbd');
