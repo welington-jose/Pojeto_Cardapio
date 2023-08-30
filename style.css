@@ -143,3 +143,28 @@
         font-weight: bold;
         
     }
+    #pedido{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    #pedido p{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      
+       
+    }
+    input{
+        margin: 0;
+        padding: 0;
+        width:33px;
+        font-size: 15px;
+        padding-left: 10px;
+        text-align: center;
+        border: none;
+        background-color: transparent; 
+        font-weight: bold;
+    }
+   

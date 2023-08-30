@@ -47,7 +47,11 @@ inicializarPasteis = () => {
         conteinerProdutos.appendChild(produtoDiv);
 
         const savedQuantidade = localStorage.getItem(`quantidade_pasteis_${val.id}`);
-        if (savedQuantidade) {
+        const savedValor = localStorage.getItem(`valor_pasteis_${val.id}`);
+        const savedNome = localStorage.getItem(`nome_pasteis_${val.id}`);
+        const savedImg = localStorage.getItem(`img_pasteis_${val.id}`);
+
+        if (savedQuantidade && savedValor && savedNome && savedImg) {
             val.quantidade = parseInt(savedQuantidade);
             const quantidadeElement = produtoDiv.querySelector('.quantidade');
             if (quantidadeElement) {
@@ -85,6 +89,9 @@ linksPasteis.forEach((link) => {
         }
 
         localStorage.setItem(`quantidade_pasteis_${key}`, pasteis[key].quantidade);
+        localStorage.setItem(`valor_pasteis_${key}`, pasteis[key].valor);
+        localStorage.setItem(`nome_pasteis_${key}`, pasteis[key].nome);
+        localStorage.setItem(`img_pasteis_${key}`, pasteis[key].img);
        
         return false;
     });
@@ -111,5 +118,9 @@ diminuirBotao.forEach((botao) => {
         }
 
         localStorage.setItem(`quantidade_pasteis_${key}`, pasteis[key].quantidade);
+        localStorage.setItem(`valor_pasteis_${key}`, pasteis[key].valor);
+        localStorage.setItem(`nome_pasteis_${key}`, pasteis[key].nome);
+        localStorage.setItem(`img_pasteis_${key}`, pasteis[key].img);
+        
     });
 });

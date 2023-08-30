@@ -2,7 +2,7 @@ const bebidas = [
     {
         id: 0,
         nome: 'Coca Cola lata 300ml',
-        img: 'imagens/bebidas/coca_lt300.jpg',
+        img: 'imagens/bebidas/coca_lt300.png',
         quantidade: 0,
         valor: 'R$ 4,00',
 
@@ -10,7 +10,7 @@ const bebidas = [
     {
         id: 1,
         nome: 'Coca cola zero lata 300ml',
-        img: 'imagens/bebidas/coca0_lt300.jpg',
+        img: 'imagens/bebidas/coca0_lt300.png',
         quantidade: 0,
         valor: 'R$ 4,00',
 
@@ -18,7 +18,7 @@ const bebidas = [
     {
         id: 2,
         nome: 'Guaraná lata 300ml',
-        img: 'imagens/bebidas/guarana_lt300.jpg',
+        img: 'imagens/bebidas/guarana_lt300.png',
         quantidade: 0,
         valor: "R$ 4,00",
 
