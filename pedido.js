@@ -24,7 +24,7 @@ function adicionarItensPedido() {
                 const itemPedido = document.createElement('div');
                 itemPedido.innerHTML = `
                 
-        <p><img src=${imgBebida} width="50px">  ${nomeBebida} <input type="number" value="${quantidade}" min="0">    Total R$ ${valorTotal.toFixed(2)} <p>  <hr>
+        <p class="pd_bebidas"><img src=${imgBebida} width="50px">  ${nomeBebida} <input type="number" value="${quantidade}" min="0">    Total R$ ${valorTotal.toFixed(2)} <p>  <hr>
     
     `;
                 pedido.appendChild(itemPedido);
@@ -57,7 +57,7 @@ function adicionarItensPedido() {
                 const itemPedido = document.createElement('div');
                 itemPedido.innerHTML = `
                 
-        <p><img src=${imgPasteis} width="50px">  ${nomePasteis} <input type="number" value="${quantidade}" min="0">    Total R$ ${valorTotal.toFixed(2)} <p>  <hr>
+        <p class="pd_pasteis"><img src=${imgPasteis} width="50px">  ${nomePasteis} <input type="number" value="${quantidade}" min="0">    Total R$ ${valorTotal.toFixed(2)} <p>  <hr>
     
     `;
                 pedido.appendChild(itemPedido);

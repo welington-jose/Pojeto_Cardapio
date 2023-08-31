@@ -105,7 +105,7 @@
         width: 100px;
         height: 150px;
         border-radius: 10px;
-        
+
     }
 
     .produto-single p {
@@ -131,7 +131,8 @@
         font-weight: bold;
         visibility: hidden;
     }
-    .diminuir-qtd{
+
+    .diminuir-qtd {
         background-color: rgb(255, 42, 5);
         color: white;
         padding: 5px 10px;
@@ -141,30 +142,48 @@
         bottom: 10px;
         left: 10px;
         font-weight: bold;
-        
+
     }
-    #pedido{
+
+    #pedido {
         display: flex;
         flex-direction: column;
-        
+        align-items: center;
+        max-width: 3000px;
+
+
     }
-    
-    #pedido p{
+
+    #pedido p {
         display: flex;
         align-items: center;
-        flex-direction: column;
-      
-       
+
+
+
     }
-    input{
+
+    .pd_pasteis img {
+        width: 75px;
+        height: 75px;
+        border-radius: 10px;
+        margin: 0 20px;
+
+    }
+
+    .pd_bebidas img {
+        width: 50px;
+        height: 75px;
+        margin: 0 20px;
+    }
+
+    input {
         margin: 0;
         padding: 0;
-        width:33px;
+        width: 33px;
         font-size: 15px;
         padding-left: 10px;
         text-align: center;
         border: none;
-        background-color: transparent; 
+        background-color: transparent;
         font-weight: bold;
     }
-   
