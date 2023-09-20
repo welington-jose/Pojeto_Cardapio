@@ -3,16 +3,19 @@
         padding: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(230, 223, 223, 0.548);
-        position: absolute;
-
+        background-color: rgba(228, 222, 222, 0.548);
+        
+       
     }
 
-    main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
+    main {
+        margin: 0 auto;
+        max-width: 700px;
+        background-color: rgb(189, 204, 204);
+        justify-content: center;
+        border-radius: 5px;
+       
     }
 
     header {
@@ -22,6 +25,7 @@
         justify-content: center;
         margin: 10px;
         height: 60px;
+       
 
     }
 
@@ -57,6 +61,7 @@
         background-color: rgb(214, 218, 26);
         border-radius: 10px;
         padding: 10px;
+        
     }
 
     .select-pedido {
@@ -65,32 +70,22 @@
         border-radius: 10px;
         padding: 10px;
     }
-
-    #pasteis {
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 0 2%;
-        display: flex;
-    }
-
-    #bebidas {
-        max-width: 700px;
-
-        margin: 0 auto;
-        padding: 0 2%;
-        display: flex;
-    }
-
+  #bebidas, #pasteis{
+    display: flex;
+    justify-content: center;
+  }
+    
     .produto-single-past,
     .produto-single-bbd {
         position: relative;
-        width: 33.3%;
         margin: 10px;
-        padding: 20px 10px;
+        padding: 20px 20px;
+        width: 180px;
+        max-width: 180px;
+        max-height: 35vh;
         background-color: white;
         display: flex;
         flex-direction: column;
-        align-items: center;
         border-radius: 10px;
 
     }
@@ -108,7 +103,7 @@
     }
     .clicavel-past img {
         width: 180px;
-        height: 150px;
+        height: 150px ;
         border-radius: 10px;
 
     }
