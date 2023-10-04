@@ -23,6 +23,54 @@ const pasteis = [
         valor: 'R$ 6,00',
 
     },
+    {
+        id: 3,
+        nome: 'Pastel de carne',
+        img: 'imagens/pasteis/Pastel-de-Carne.jpg',
+        quantidade: 0,
+        valor: 'R$ 6,00',
+
+    },
+    {
+        id: 4,
+        nome: 'Patel de frango',
+        img: 'imagens/pasteis/pastel-frango.jpg',
+        quantidade: 0,
+        valor: 'R$ 6,00',
+
+    },
+    {
+        id: 5,
+        nome: 'Pastel de presunto e queijo',
+        img: 'imagens/pasteis/pastel-presunto-queijo.jpg',
+        quantidade: 0,
+        valor: 'R$ 6,00',
+
+    },
+    {
+        id: 6,
+        nome: 'Pastel de carne',
+        img: 'imagens/pasteis/Pastel-de-Carne.jpg',
+        quantidade: 0,
+        valor: 'R$ 6,00',
+
+    },
+    {
+        id: 7,
+        nome: 'Patel de frango',
+        img: 'imagens/pasteis/pastel-frango.jpg',
+        quantidade: 0,
+        valor: 'R$ 6,00',
+
+    },
+    {
+        id: 8,
+        nome: 'Pastel de presunto e queijo',
+        img: 'imagens/pasteis/pastel-presunto-queijo.jpg',
+        quantidade: 0,
+        valor: 'R$ 6,00',
+
+    },
 ];
 
 inicializarPasteis = () => {

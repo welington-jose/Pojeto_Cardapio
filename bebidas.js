@@ -23,6 +23,54 @@ const bebidas = [
         valor: "R$ 4,00",
 
     },
+    {
+        id: 3,
+        nome: 'Coca Cola lata 300ml',
+        img: 'imagens/bebidas/coca_lt300.png',
+        quantidade: 0,
+        valor: 'R$ 4,00',
+
+    },
+    {
+        id: 4,
+        nome: 'Coca cola zero lata 300ml',
+        img: 'imagens/bebidas/coca0_lt300.png',
+        quantidade: 0,
+        valor: 'R$ 4,00',
+
+    },
+    {
+        id: 5,
+        nome: 'Guaraná lata 300ml',
+        img: 'imagens/bebidas/guarana_lt300.png',
+        quantidade: 0,
+        valor: "R$ 4,00",
+
+    },
+    {
+        id: 6,
+        nome: 'Coca Cola lata 300ml',
+        img: 'imagens/bebidas/coca_lt300.png',
+        quantidade: 0,
+        valor: 'R$ 4,00',
+
+    },
+    {
+        id: 7,
+        nome: 'Coca cola zero lata 300ml',
+        img: 'imagens/bebidas/coca0_lt300.png',
+        quantidade: 0,
+        valor: 'R$ 4,00',
+
+    },
+    {
+        id: 8,
+        nome: 'Guaraná lata 300ml',
+        img: 'imagens/bebidas/guarana_lt300.png',
+        quantidade: 0,
+        valor: "R$ 4,00",
+
+    },
 ];
 
 inicializarBebidas = () => {
