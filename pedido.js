@@ -18,17 +18,22 @@ function adicionarItensPedido() {
 
                 const valorBebida = localStorage.getItem(`valor_bebidas_${id}`);
                 const valorBebidaNumero = parseFloat(valorBebida.replace('R$ ', '').replace(',', '.'));
-                
+
                 const valorTotal = valorBebidaNumero * quantidade;
 
                 const itemPedido = document.createElement('div');
                 itemPedido.innerHTML = `
                 
-        <p class="pd_bebidas"><img src=${imgBebida} width="50px">  ${nomeBebida} <input type="number" value="${quantidade}" min="0">     <span class="totais"> Total R$ ${valorTotal.toFixed(2)}</span> </p>  <hr>
+                <div class="pd_bebidas">
+                <p class="img_pd"><img src=${imgBebida} width="50px"></p>
+                <p class="nome_pd">${nomeBebida}</p>
+                <p class="qtd_pd"><input type="number" value="${quantidade}" min="0"></p> 
+                <p class="totais"> Total R$ ${valorTotal.toFixed(2)} </p>
+                </div>  <hr>
     
     `;
                 pedido.appendChild(itemPedido);
-               
+
 
                 // Adicione um ouvinte de evento ao input para atualizar o localStorage
                 const inputQuantidade = itemPedido.querySelector('input[type="number"]');
@@ -51,24 +56,29 @@ function adicionarItensPedido() {
 
                 const valorPasteis = localStorage.getItem(`valor_pasteis_${id}`);
                 const valorPasteisNumero = parseFloat(valorPasteis.replace('R$ ', '').replace(',', '.'));
-                
+
                 const valorTotal = valorPasteisNumero * quantidade;
 
                 const itemPedido = document.createElement('div');
                 itemPedido.innerHTML = `
                 
-        <p class="pd_pasteis"><img src=${imgPasteis} width="50px">  ${nomePasteis} <input type="number" value="${quantidade}" min="0">   <span class="totais"> Total R$ ${valorTotal.toFixed(2)} </span></p>  <hr>
+        <div class="pd_pasteis">
+        <p class="img_pd"><img src=${imgPasteis} width="50px"></p>
+        <p class="nome_pd">${nomePasteis}</p>
+        <p class="qtd_pd"><input type="number" value="${quantidade}" min="0"></p> 
+        <p class="totais"> Total R$ ${valorTotal.toFixed(2)} </p>
+        </div>  <hr>
     
     `;
                 pedido.appendChild(itemPedido);
 
-                 // Adicione um ouvinte de evento ao input para atualizar o localStorage
-                 const inputQuantidade = itemPedido.querySelector('input[type="number"]');
-                 inputQuantidade.addEventListener('input', () => {
-                     const newQuantity = parseInt(inputQuantidade.value);
-                     localStorage.setItem(chave, newQuantity); // Atualiza a quantidade no localStorage
-                     adicionarItensPedido(); // Recria a lista de itens no pedido
-                 });
+                // Adicione um ouvinte de evento ao input para atualizar o localStorage
+                const inputQuantidade = itemPedido.querySelector('input[type="number"]');
+                inputQuantidade.addEventListener('input', () => {
+                    const newQuantity = parseInt(inputQuantidade.value);
+                    localStorage.setItem(chave, newQuantity); // Atualiza a quantidade no localStorage
+                    adicionarItensPedido(); // Recria a lista de itens no pedido
+                });
             }
         }
     }
