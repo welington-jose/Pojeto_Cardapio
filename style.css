@@ -12,7 +12,7 @@
 
     main {
         margin: 80px auto;
-        width: 120vh;
+    
         max-width: 750px;
         background-color: #F5D761;
         border-radius: 5px;
@@ -187,37 +187,40 @@
     .pd_bebidas {
         display: flex;
         align-items: center;
-        margin: 0px;
+        margin: 0;
         padding: 0;
-        justify-content: space-between;
-
-
-    }
-
-    .pd_pasteis .qtd_pd,
-    .pd_bebidas .qtd_pd {
-        text-align: center ;
-        margin: 25%;
-        position: absolute;
-    
-
-
+        
+        
+        
 
 
     }
 
     .pd_pasteis .nome_pd,
     .pd_bebidas .nome_pd {
-        margin: 0 0 0 100px;
+        margin: 0 100px 0 100px;
         padding: 0;
         text-align: start;
         position: absolute;
     }
+    .pd_pasteis .qtd_pd,
+    .pd_bebidas .qtd_pd {
+        text-align: start;
+        position: absolute;
+        right: 50%;
+        display: flex;
+        align-items: center;
+        
+        }
 
     .pd_pasteis .totais,
     .pd_bebidas .totais {
-        text-align: right;
-        margin-right: 20px;
+        position: absolute;
+        text-align: left;
+        left: 63%;
+        margin: 0 10px;
+        
+        
 
     }
 
@@ -240,13 +243,15 @@
     }
 
     input {
+        
         margin: 0;
         padding: 0;
         width: 33px;
         font-size: 15px;
-        padding-left: 10px;
         text-align: center;
         border: none;
         background-color: transparent;
         font-weight: bold;
+        position: absolute;
+        text-align: center;
     }
