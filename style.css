@@ -2,15 +2,14 @@
         margin: 0;
         padding: 0;
         width: 100%;
-        height: 100%;
-        background-color: rgba(236, 234, 234, 0.548);
-        
-
+        height: 100vh;
+        background-color: rgba(230, 223, 223, 0.548);
+        position: absolute;
 
     }
 
-
     main {
+<<<<<<< HEAD
         margin: 80px auto;
     
         max-width: 750px;
@@ -22,25 +21,22 @@
     }
 
     main #pedido {
+=======
+>>>>>>> b6337d6d02d7cefaf2fe6fab17f77fb142331de6
         display: flex;
-        flex-direction: column;
-    }
+        align-items: center;
+        justify-content: center;
+       
 
+    }
 
     header {
 
         color: black;
         display: flex;
         justify-content: center;
-        margin: 0 10px;
-        padding: 5px;
+        margin: 10px;
         height: 60px;
-        position: fixed;
-        width: 100%;
-        top:0;
-        z-index: 1000;
-        background-color:#F4F3F3
-    
 
     }
 
@@ -57,7 +53,7 @@
 
     header a:hover {
         color: white;
-        background-color: #F0B526;
+        background-color: rgb(214, 218, 26);
         border-radius: 10px;
         padding: 10px;
 
@@ -66,51 +62,50 @@
 
     .select-past {
         color: white;
-        background-color: #F0B526;
+        background-color: rgb(214, 218, 26);
         border-radius: 10px;
         padding: 10px;
     }
 
     .select-bbd {
         color: white;
-        background-color: #F0B526;
+        background-color: rgb(214, 218, 26);
         border-radius: 10px;
         padding: 10px;
-
     }
 
     .select-pedido {
         color: white;
-        background-color: #F0B526;
+        background-color: rgb(214, 218, 26);
         border-radius: 10px;
         padding: 10px;
     }
 
-    #bebidas,
     #pasteis {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 2%;
         display: flex;
-        justify-content: center;
-        padding: 5px;
-        margin: 0;
+    }
+
+    #bebidas {
+        max-width: 700px;
+
+        margin: 0 auto;
+        padding: 0 2%;
         display: flex;
-        flex-wrap: wrap;
-
-
     }
 
     .produto-single-past,
     .produto-single-bbd {
         position: relative;
+        width: 33.3%;
         margin: 10px;
-        padding: 30px 20px;
-        width: 180px;
-        max-width: 180px;
-        max-height: 35vh;
+        padding: 20px 10px;
         background-color: white;
-        color: black;
         display: flex;
-        justify-content: center;
-        text-transform: uppercase;
+        flex-direction: column;
+        align-items: center;
         border-radius: 10px;
 
     }
@@ -118,45 +113,40 @@
     .produto-single-past:hover,
     .produto-single-bbd:hover {
         transition: 0, 8s;
-        background-color: #F0B526;
-        color: #BD6E00;
-
-
+        background-color: rgb(214, 218, 26)
     }
-
-    .clicavel-bbd,
-    .clicavel-past {
-        text-align: center;
-        font-weight: bold;
-        
+    .clicavel-bbd{
+        text-align: center  ;
     }
-
-
+    .clicavel-past{
+        text-align: center  ;
+    }
     .clicavel-past img {
         width: 180px;
         height: 150px;
         border-radius: 10px;
 
-
     }
 
     .clicavel-bbd img {
-        max-width: 100px;
-        max-height: 150px;
+        width: 100px;
+        height: 150px;
         border-radius: 10px;
 
-
     }
-
-
+    
 
     .produto-single p {
         margin: 0;
         padding: 10px 0;
         white-space: pre-wrap;
-        cursor: pointer;
     }
 
+
+    .produto-single-past {
+
+        cursor: pointer;
+    }
 
     .quantidade {
         background-color: rgb(75, 157, 233);
@@ -183,10 +173,19 @@
 
     }
 
-    .pd_pasteis,
-    .pd_bebidas {
+    #pedido {
+        flex-direction: column;
+        width: 100vh;
+        max-width: 100vh;
+        justify-content: flex-end;
+        background-color: rgb(235, 235, 241);
+
+    }
+
+    #pedido p {
         display: flex;
         align-items: center;
+<<<<<<< HEAD
         margin: 0;
         padding: 0;
         
@@ -227,12 +226,29 @@
 
 
 
+=======
+
+
+    }
+
+    .pd_pasteis {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .pd_bebidas {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+>>>>>>> b6337d6d02d7cefaf2fe6fab17f77fb142331de6
     .pd_pasteis img {
         width: 75px;
         height: 75px;
         border-radius: 10px;
         margin: 0 30px 0 10px;
-
 
     }
 
@@ -252,6 +268,13 @@
         border: none;
         background-color: transparent;
         font-weight: bold;
+<<<<<<< HEAD
         position: absolute;
         text-align: center;
+=======
+    }
+
+    #pedido p .totais {
+        text-align: right;
+>>>>>>> b6337d6d02d7cefaf2fe6fab17f77fb142331de6
     }
