@@ -9,18 +9,18 @@ const bebidas = [
     },
     {
         id: 1,
-        nome: 'Coca cola zero lata 300ml',
-        img: 'imagens/bebidas/coca0_lt300.png',
-        quantidade: 0,
-        valor: 'R$ 4,00',
-
-    },
-    {
-        id: 2,
         nome: 'Guaraná lata 300ml',
         img: 'imagens/bebidas/guarana_lt300.png',
         quantidade: 0,
         valor: "R$ 4,00",
+
+    },
+    {
+        id: 2,
+        nome: 'Coca cola zero lata 300ml',
+        img: 'imagens/bebidas/coca0_lt300.png',
+        quantidade: 0,
+        valor: 'R$ 4,00',
 
     },
     {
@@ -71,6 +71,8 @@ const bebidas = [
         valor: "R$ 4,00",
 
     },
+   
+   
 ];
 
 inicializarBebidas = () => {
@@ -127,11 +129,12 @@ linksBebidas.forEach((link) => {
         const key = link.getAttribute('data-key');
         bebidas[key].quantidade++;
 
-        const quantidadeElement = link.querySelector('.quantidade');
+          const quantidadeElement = link.querySelector('.quantidade');
         if (quantidadeElement) {
             quantidadeElement.textContent = bebidas[key].quantidade;
             quantidadeElement.style.visibility = 'visible';
         }
+        
 
         const diminuirBotao = link.parentElement.querySelector('.diminuir-qtd');
         if (diminuirBotao) {
@@ -158,6 +161,8 @@ diminuirBotao.forEach((botao) => {
         const botaoDiminuir = botao.parentElement.querySelector('.diminuir-qtd');
 
         if (bebidas[key].quantidade > 0) {
+            bebidas[key].quantidade--;
+            localStorage.setItem(`quantidade_bebidas_${key}`, bebidas[key].quantidade);
             botaoDiminuir.style.visibility = 'visible';
         } else {
             botaoDiminuir.style.visibility = 'hidden';

@@ -255,3 +255,16 @@
         position: absolute;
         text-align: center;
     }
+    #somaTotal{
+        display: flex;
+        position: fixed;
+        top: 80vh;
+        right: 15vh;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #F0B526;
+        padding: 15px;
+        border-radius: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        
+    }
