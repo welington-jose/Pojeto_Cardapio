@@ -4,7 +4,7 @@
         width: 100%;
         height: 100%;
         background-color: rgba(236, 234, 234, 0.548);
-        
+
 
 
     }
@@ -12,9 +12,9 @@
 
     main {
         margin: 80px auto;
-    
+
         max-width: 750px;
-        background-color: #F5D761;
+        background-color: #f5d761b0;
         border-radius: 5px;
 
 
@@ -37,11 +37,9 @@
         height: 60px;
         position: fixed;
         width: 100%;
-        top:0;
+        top: 0;
         z-index: 1000;
-        background-color:#F4F3F3
-    
-
+        background-color: #F4F3F3
     }
 
     header a {
@@ -128,7 +126,7 @@
     .clicavel-past {
         text-align: center;
         font-weight: bold;
-        
+
     }
 
 
@@ -189,38 +187,42 @@
         align-items: center;
         margin: 0;
         padding: 0;
-        
-        
-        
+        max-width: 80vh;
+
+
+
 
 
     }
 
     .pd_pasteis .nome_pd,
     .pd_bebidas .nome_pd {
-        margin: 0 100px 0 100px;
+        margin: 0 10px 0 100px;
         padding: 0;
-        text-align: start;
-        position: absolute;
+       position: absolute;
+       
     }
+
     .pd_pasteis .qtd_pd,
     .pd_bebidas .qtd_pd {
-        text-align: start;
+        
         position: absolute;
-        right: 50%;
+        left: 50%;
         display: flex;
         align-items: center;
-        
-        }
+
+    }
 
     .pd_pasteis .totais,
     .pd_bebidas .totais {
+        
+    
         position: absolute;
         text-align: left;
-        left: 63%;
-        margin: 0 10px;
-        
-        
+       
+        margin-left: 65vh;
+       
+
 
     }
 
@@ -243,9 +245,9 @@
     }
 
     input {
-        
+
         margin: 0;
-        padding: 0;
+        padding:0;
         width: 33px;
         font-size: 15px;
         text-align: center;
@@ -255,7 +257,8 @@
         position: absolute;
         text-align: center;
     }
-    #somaTotal{
+
+    #somaTotal {
         display: flex;
         position: fixed;
         top: 80vh;
@@ -266,5 +269,35 @@
         padding: 15px;
         border-radius: 10px;
         font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .qtd_pd {
+        display: flex;
+        align-items: center;
+        justify-content: center
+    ;
+}       
+    .qtd_pd p {
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        /* Alinha os elementos igualmente espaçados */
+        align-items: center;
+        /* Centraliza os elementos verticalmente */
+        border: 0.5px solid black;
+        /* Adiciona borda à div */
         
+        padding: 12px;
+        /* Adiciona espaçamento interno */
+        color: #BD6E00;
+        
+    }
+    .qtd_pd .aumentar {
+        border-radius: 5px 0 0 5px;
+        border-right: none;
+    }
+    .qtd_pd .diminuir {
+        border-radius: 0 5px 5px 0;
+        border-left: none;
     }

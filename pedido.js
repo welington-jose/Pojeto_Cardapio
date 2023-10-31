@@ -21,8 +21,12 @@ function adicionarItensPedido() {
                 itemPedido.innerHTML = `
                     <div class="pd_bebidas">
                         <p class="img_pd"><img src=${imgBebida} width="50px"></p>
-                        <p class "nome_pd">${nomeBebida}</p>
-                        <p class="qtd_pd"><input type="number" value="${quantidade}" min="0"></p>
+                        <p class="nome_pd">${nomeBebida}</p>
+                        <div class="qtd_pd">
+                            <p class="aumentar"><input type="button" value="+"></p>
+                            <p class="qtd"><input type="text" value="${quantidade}" min="1"></p>
+                            <p class="diminuir"><input type="button" value="-"></p>
+                        </div>
                         <p class="totais"> Total R$ ${valorTotal.toFixed(2)} </p>
                     </div>
                     <hr>
@@ -30,7 +34,7 @@ function adicionarItensPedido() {
                 pedido.appendChild(itemPedido); // Adicionar o item à exibição do pedido
 
                 // Adicionar um ouvinte de evento ao campo de entrada de quantidade
-                const inputQuantidade = itemPedido.querySelector('input[type="number"]');
+                const inputQuantidade = itemPedido.querySelector('input[type="text"]');
                 inputQuantidade.addEventListener('input', () => {
                     const novaQuantidade = parseInt(inputQuantidade.value);
                     if (novaQuantidade <= 0) {
@@ -60,7 +64,11 @@ function adicionarItensPedido() {
                     <div class="pd_pasteis">
                         <p class="img_pd"><img src=${imgPasteis} width="50px"></p>
                         <p class="nome_pd">${nomePasteis}</p>
-                        <p class="qtd_pd"><input type="number" value="${quantidade}" min="0"></p>
+                        <div class="qtd_pd">
+                            <p class="aumentar"><input type="button" value="+"></p>
+                            <p class="qtd"><input type="text" value="${quantidade}" min="1"></p>
+                            <p class="diminuir"><input type="button" value="-"></p>
+                        </div>
                         <p class="totais"> Total R$ ${valorTotal.toFixed(2)} </p>
                     </div>
                     <hr>
@@ -68,7 +76,7 @@ function adicionarItensPedido() {
                 pedido.appendChild(itemPedido); // Adicionar o item à exibição do pedido
 
                 // Adicionar um ouvinte de evento ao campo de entrada de quantidade
-                const inputQuantidade = itemPedido.querySelector('input[type="number"]');
+                const inputQuantidade = itemPedido.querySelector('input[type="text"]');
                 inputQuantidade.addEventListener('input', () => {
                     const novaQuantidade = parseInt(inputQuantidade.value);
                     if (novaQuantidade <= 0) {
@@ -127,7 +135,7 @@ adicionarItensPedido(); // Adicionar itens ao pedido
 somarPedido(); // Calcular o valor total do pedido inicial
 
 // Adicionar ouvintes de evento aos campos de entrada de quantidade
-const inputsQuantidade = document.querySelectorAll('input[type="number"]');
+const inputsQuantidade = document.querySelectorAll('input[type="text"]');
 inputsQuantidade.forEach((input) => {
     input.addEventListener('input', somarPedido); // Recalcular o valor total do pedido quando o input é alterado
 });
