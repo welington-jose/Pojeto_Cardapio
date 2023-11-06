@@ -95,6 +95,27 @@ inicializarPasteis = () => {
         conteinerProdutos.appendChild(produtoDiv);
 
         const savedQuantidade = localStorage.getItem(`quantidade_pasteis_${val.id}`);
+        /*
+        if (savedQuantidade) {
+            const quantidade = parseInt(savedQuantidade);
+            if (!isNaN(quantidade)) {
+                val.quantidade = quantidade;
+            }
+
+
+            const quantidadeElement = produtoDiv.querySelector('.quantidade');
+            if (quantidadeElement) {
+                quantidadeElement.textContent = savedQuantidade;
+                quantidadeElement.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
+            }
+
+            const diminuirBotao = produtoDiv.querySelector('.diminuir-qtd');
+            if (diminuirBotao) {
+                diminuirBotao.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
+            }
+           
+        }
+        */
         const savedValor = localStorage.getItem(`valor_pasteis_${val.id}`);
         const savedNome = localStorage.getItem(`nome_pasteis_${val.id}`);
         const savedImg = localStorage.getItem(`img_pasteis_${val.id}`);
@@ -118,9 +139,7 @@ inicializarPasteis = () => {
 inicializarPasteis ();
 
 
-var linksPasteis = document.querySelectorAll('.clicavel-past');
-
-linksPasteis.forEach((link) => {
+document.querySelectorAll('.clicavel-past').forEach((link) => {
     link.addEventListener('click', () => {
         const key = link.getAttribute('data-key');
         pasteis[key].quantidade++;

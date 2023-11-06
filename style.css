@@ -16,6 +16,7 @@
         max-width: 750px;
         background-color: #f5d761b0;
         border-radius: 5px;
+        position: relative;
 
 
 
@@ -187,7 +188,7 @@
         align-items: center;
         margin: 0;
         padding: 0;
-        max-width: 80vh;
+        max-width: 80%;
 
 
 
@@ -197,9 +198,11 @@
 
     .pd_pasteis .nome_pd,
     .pd_bebidas .nome_pd {
-        margin: 0 10px 0 100px;
+        position: absolute;
+        left: 100px ;
         padding: 0;
-       position: absolute;
+        margin: 0;
+      
        
     }
 
@@ -216,11 +219,9 @@
     .pd_pasteis .totais,
     .pd_bebidas .totais {
         
-    
         position: absolute;
-        text-align: left;
-       
-        margin-left: 65vh;
+        left: 80%;
+        
        
 
 

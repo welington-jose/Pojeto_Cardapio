@@ -1,7 +1,7 @@
 function adicionarItensPedido() {
     const pedido = document.getElementById('pedido');
     pedido.innerHTML = ''; // Limpar a exibição do pedido
-    
+
 
     for (let i = 0; i < localStorage.length; i++) {
         const chave = localStorage.key(i);
@@ -35,13 +35,36 @@ function adicionarItensPedido() {
 
                 // Adicionar um ouvinte de evento ao campo de entrada de quantidade
                 const inputQuantidade = itemPedido.querySelector('input[type="text"]');
+                const aumentar = itemPedido.querySelector('.aumentar');
+                const diminuir = itemPedido.querySelector('.diminuir');
+
+                aumentar.addEventListener('click', () => {
+                    let novaQuantidade = parseInt(inputQuantidade.value) + 1;
+                    inputQuantidade.value = novaQuantidade;
+                    localStorage.setItem(chave, novaQuantidade);
+                    adicionarItensPedido();
+                    somarPedido();
+                });
+
+                diminuir.addEventListener('click', () => {
+                    let novaQuantidade = parseInt(inputQuantidade.value) - 1;
+                    if (novaQuantidade < 1) {
+                        novaQuantidade = 0;
+                    }
+                    inputQuantidade.value = novaQuantidade;
+                    localStorage.setItem(chave, novaQuantidade);
+                    adicionarItensPedido();
+                    somarPedido();
+                });
+
                 inputQuantidade.addEventListener('input', () => {
-                    const novaQuantidade = parseInt(inputQuantidade.value);
+                    const novaQuantidade = parseInt(inputQuantidade.value); //chamdo dando alterado inputQuantidade
                     if (novaQuantidade <= 0) {
                         localStorage.removeItem(chave);
                         itemPedido.style.display = 'none'; // Ocultar o item no pedido
                     }
                     localStorage.setItem(chave, novaQuantidade); // Atualizar a quantidade no armazenamento local
+                    adicionarItensPedido();
                     somarPedido(); // Recriar a lista de itens no pedido
                 });
             }
@@ -58,6 +81,7 @@ function adicionarItensPedido() {
                 const valorPasteis = localStorage.getItem(`valor_pasteis_${id}`);
                 const valorPasteisNumero = parseFloat(valorPasteis.replace('R$ ', '').replace(',', '.'));
                 const valorTotal = valorPasteisNumero * quantidade;
+                const valorTotalFormatado = valorTotal.toFixed(2).replace(/\./, ',');
 
                 const itemPedido = document.createElement('div'); // Criar um novo elemento de item
                 itemPedido.innerHTML = `
@@ -69,22 +93,50 @@ function adicionarItensPedido() {
                             <p class="qtd"><input type="text" value="${quantidade}" min="1"></p>
                             <p class="diminuir"><input type="button" value="-"></p>
                         </div>
-                        <p class="totais"> Total R$ ${valorTotal.toFixed(2)} </p>
+                        <p class="totais"> Total R$ ${valorTotalFormatado} </p>
                     </div>
                     <hr>
                 `;
                 pedido.appendChild(itemPedido); // Adicionar o item à exibição do pedido
 
                 // Adicionar um ouvinte de evento ao campo de entrada de quantidade
+               
+                 
                 const inputQuantidade = itemPedido.querySelector('input[type="text"]');
+
+                const aumentar = itemPedido.querySelector('.aumentar');
+                const diminuir = itemPedido.querySelector('.diminuir');
+
+                aumentar.addEventListener('click', () => {
+                    let novaQuantidade = parseInt(inputQuantidade.value) + 1;
+                    inputQuantidade.value = novaQuantidade;
+                    localStorage.setItem(chave, novaQuantidade);
+                    adicionarItensPedido();
+                    somarPedido();
+                });
+
+                diminuir.addEventListener('click', () => {
+                    let novaQuantidade = parseInt(inputQuantidade.value) - 1;
+                    if (novaQuantidade < 1) {
+                        novaQuantidade = 0;
+                    }
+                    inputQuantidade.value = novaQuantidade;
+                    localStorage.setItem(chave, novaQuantidade);
+                    adicionarItensPedido();
+                    somarPedido();
+                });
+
                 inputQuantidade.addEventListener('input', () => {
                     const novaQuantidade = parseInt(inputQuantidade.value);
+                    
                     if (novaQuantidade <= 0) {
                         localStorage.removeItem(chave);
                         itemPedido.style.display = 'none'; // Ocultar o item no pedido
                     }
                     localStorage.setItem(chave, novaQuantidade); // Atualizar a quantidade no armazenamento local
+                    adicionarItensPedido();
                     somarPedido(); // Recriar a lista de itens no pedido
+                    
                 });
             }
         }
@@ -134,8 +186,12 @@ function somarPedido() {
 adicionarItensPedido(); // Adicionar itens ao pedido
 somarPedido(); // Calcular o valor total do pedido inicial
 
+
 // Adicionar ouvintes de evento aos campos de entrada de quantidade
 const inputsQuantidade = document.querySelectorAll('input[type="text"]');
 inputsQuantidade.forEach((input) => {
     input.addEventListener('input', somarPedido); // Recalcular o valor total do pedido quando o input é alterado
 });
+
+
+

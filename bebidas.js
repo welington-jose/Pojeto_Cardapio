@@ -122,9 +122,7 @@ inicializarBebidas = () => {
 inicializarBebidas();
 
 
-var linksBebidas = document.querySelectorAll('.clicavel-bbd');
-
-linksBebidas.forEach((link) => {
+document.querySelectorAll('.clicavel-bbd').forEach((link) => {
     link.addEventListener('click', () => {
         const key = link.getAttribute('data-key');
         bebidas[key].quantidade++;
