@@ -16,6 +16,7 @@ function adicionarItensPedido() {
                 const valorBebida = localStorage.getItem(`valor_bebidas_${id}`);
                 const valorBebidaNumero = parseFloat(valorBebida.replace('R$ ', '').replace(',', '.'));
                 const valorTotal = valorBebidaNumero * quantidade;
+                const valorTotalFormatado = valorTotal.toFixed(2).replace(/\./, ',');
 
                 const itemPedido = document.createElement('div'); // Criar um novo elemento de item
                 itemPedido.innerHTML = `
@@ -27,7 +28,7 @@ function adicionarItensPedido() {
                             <p class="qtd"><input type="text" value="${quantidade}" min="1"></p>
                             <p class="diminuir"><input type="button" value="-"></p>
                         </div>
-                        <p class="totais"> Total R$ ${valorTotal.toFixed(2)} </p>
+                        <p class="totais"> Total R$ ${valorTotalFormatado} </p>
                     </div>
                     <hr>
                 `;
@@ -177,7 +178,8 @@ function somarPedido() {
 
     const somaTotal = document.getElementById('somaTotal');
     if (somaTotal) {
-        somaTotal.innerHTML = `R$ ${totalPedido.toFixed(2)}`;
+        const TotalFormatado = totalPedido.toFixed(2).replace(/\./, ',');
+        somaTotal.innerHTML = `R$ ${TotalFormatado}`;
         somaTotal.style.display = totalPedido < 1 ? 'none' : 'block';
 
     }

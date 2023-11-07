@@ -97,12 +97,13 @@ inicializarBebidas = () => {
         conteinerProdutos.appendChild(produtoDiv);
 
         const savedQuantidade = localStorage.getItem(`quantidade_bebidas_${val.id}`);
-        const savedValor = localStorage.getItem(`valor_bebidas_${val.id}`);
-        const savedNome = localStorage.getItem(`nome_bebidas_${val.id}`);
-        const savedImg = localStorage.getItem(`img_bebidas_${val.id}`);
+        if (savedQuantidade) {
+            const quantidade = parseInt(savedQuantidade);
+            if (!isNaN(quantidade)) {
+                val.quantidade = quantidade;
+            }
 
-        if (savedQuantidade && savedValor && savedNome && savedImg) {
-            val.quantidade = parseInt(savedQuantidade);
+
             const quantidadeElement = produtoDiv.querySelector('.quantidade');
             if (quantidadeElement) {
                 quantidadeElement.textContent = savedQuantidade;
@@ -113,8 +114,8 @@ inicializarBebidas = () => {
             if (diminuirBotao) {
                 diminuirBotao.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
             }
+           
         }
-
 
     });
 };

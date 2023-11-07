@@ -221,14 +221,12 @@
         
         position: absolute;
         left: 80%;
+        font-weight: bold;
         
        
 
 
     }
-
-
-
 
     .pd_pasteis img {
         width: 75px;
@@ -249,13 +247,13 @@
 
         margin: 0;
         padding:0;
-        width: 33px;
+        width: 30px;
         font-size: 15px;
         text-align: center;
         border: none;
         background-color: transparent;
         font-weight: bold;
-        position: absolute;
+
         text-align: center;
     }
 
@@ -273,28 +271,23 @@
 
     }
 
-    .qtd_pd {
-        display: flex;
-        align-items: center;
-        justify-content: center
-    ;
-}       
-    .qtd_pd p {
+    
+      
+    .qtd_pd  {
         margin: 0;
+        padding: 0 10px;
+        width: 80px;
+        height: 25px;
         display: flex;
-        justify-content: space-around;
-        /* Alinha os elementos igualmente espaçados */
+        flex-direction: row; /* Orientação dos itens horizontalmente */
+        justify-content: center;
         align-items: center;
-        /* Centraliza os elementos verticalmente */
         border: 0.5px solid black;
-        /* Adiciona borda à div */
-        
-        padding: 12px;
-        /* Adiciona espaçamento interno */
-        color: #BD6E00;
+        background-color: rgba(255, 225, 92, 0.521);
+        border-radius: 3px;
         
     }
-    .qtd_pd .aumentar {
+   /* .qtd_pd .aumentar {
         border-radius: 5px 0 0 5px;
         border-right: none;
     }
