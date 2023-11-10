@@ -94,6 +94,11 @@ inicializarPasteis = () => {
         produtoDiv.innerHTML = produtoContent;
         conteinerProdutos.appendChild(produtoDiv);
 
+        const diminuirBotao = produtoDiv.querySelector('.diminuir-qtd');
+        if (diminuirBotao) {
+            diminuirBotao.style.visibility = val.quantidade > 0 ? 'visible' : 'hidden';
+        }
+
         const savedQuantidade = localStorage.getItem(`quantidade_pasteis_${val.id}`);
         
         if (savedQuantidade) {
@@ -109,10 +114,7 @@ inicializarPasteis = () => {
                 quantidadeElement.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
             }
 
-            const diminuirBotao = produtoDiv.querySelector('.diminuir-qtd');
-            if (diminuirBotao) {
-                diminuirBotao.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
-            }
+           
            
         }
         
