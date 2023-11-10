@@ -96,6 +96,12 @@ inicializarBebidas = () => {
         produtoDiv.innerHTML = produtoContent;
         conteinerProdutos.appendChild(produtoDiv);
 
+        const diminuirBotao = produtoDiv.querySelector('.diminuir-qtd');
+        if (diminuirBotao) {
+            diminuirBotao.style.visibility = val.quantidade > 0 ? 'visible' : 'hidden';
+        }
+
+
         const savedQuantidade = localStorage.getItem(`quantidade_bebidas_${val.id}`);
         if (savedQuantidade) {
             const quantidade = parseInt(savedQuantidade);
@@ -110,10 +116,7 @@ inicializarBebidas = () => {
                 quantidadeElement.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
             }
 
-            const diminuirBotao = produtoDiv.querySelector('.diminuir-qtd');
-            if (diminuirBotao) {
-                diminuirBotao.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
-            }
+            
            
         }
 

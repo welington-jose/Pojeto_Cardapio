@@ -179,7 +179,7 @@ function somarPedido() {
     const somaTotal = document.getElementById('somaTotal');
     if (somaTotal) {
         const TotalFormatado = totalPedido.toFixed(2).replace(/\./, ',');
-        somaTotal.innerHTML = `R$ ${TotalFormatado}`;
+        somaTotal.innerHTML = `<p class="totalGeral"> R$ ${TotalFormatado}</p>`;
         somaTotal.style.display = totalPedido < 1 ? 'none' : 'block';
 
     }
