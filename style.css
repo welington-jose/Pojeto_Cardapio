@@ -103,9 +103,9 @@
         position: relative;
         margin: 10px;
         padding: 30px 20px;
-        width: 180px;
-        max-width: 180px;
-        max-height: 35vh;
+        width: 150px;
+        max-width: 150px;
+        max-height: 30vh;
         background-color: white;
         color: black;
         display: flex;
@@ -299,35 +299,55 @@
     
     
         
-     width: 740px;
+     width: clamp(0px, 100%, 740px);
         
         bottom: 0;
-        top: 92vh;
-      
+    
+        height: 60px;
         left: auto;
         border-radius: 0;
-        
         margin: 0;
-        justify-content: center;
-    
-       
-      
-    
+        display: flex;
+        top: auto;
       
     }
     .totalGeral{
         display: flex;
-        align-items: center;
         justify-content: center;
-        
-        
+        left: 100%;
+     
         
     }
     main{
-        
+       
+       display: block;
         margin-bottom: 50px;
+        min-width: 565px;
+
        
     }
+    .clicavel-past img {
+        width: 140px;
+        height: 100px;
+        border-radius: 10px;
+
+
+    }
+
+    .clicavel-bbd img {
+        max-width: 60px;
+        max-height: 110px;
+        border-radius: 10px;
     
 
 }
+.produto-single-past,
+.produto-single-bbd {
+   
+    
+    padding: 30px 20px 0 20px;
+  
+    }
+   
+        
+    }
