@@ -5,8 +5,6 @@
         height: 98vh;
         background-color: rgba(236, 234, 234, 0.548);
 
-
-
     }
 
 
@@ -17,8 +15,6 @@
         border-radius: 5px;
         position: relative;
         margin-bottom: 0;
-
-
 
     }
 
@@ -122,9 +118,6 @@
         transition: 0, 8s;
         background-color: #F0B526;
         color: #BD6E00;
-        
-       
-
 
     }
 
@@ -133,17 +126,13 @@
         text-align: center;
         font-weight: 500;
         cursor: pointer;
-        
-       
 
     }
-
 
     .clicavel-past img {
         width: 180px;
         height: 150px;
         border-radius: 10px;
-
 
     }
 
@@ -151,7 +140,6 @@
         max-width: 100px;
         max-height: 150px;
         border-radius: 10px;
-       
 
     }
 
@@ -196,16 +184,16 @@
     .pd_pasteis .nome_pd,
     .pd_bebidas .nome_pd {
         position: absolute;
-        left: 100px ;
+        left: 100px;
         padding: 0;
         margin: 0;
-              
-       
+
+
     }
 
     .pd_pasteis .qtd_pd,
     .pd_bebidas .qtd_pd {
-        
+
         position: absolute;
         left: 50%;
         display: flex;
@@ -215,13 +203,10 @@
 
     .pd_pasteis .totais,
     .pd_bebidas .totais {
-        
+
         position: absolute;
         left: 80%;
         font-weight: bold;
-        
-       
-
 
     }
 
@@ -243,7 +228,7 @@
     input {
 
         margin: 0;
-        padding:0;
+        padding: 0;
         width: 30px;
         font-size: 16px;
         text-align: center;
@@ -266,136 +251,156 @@
         left: 80vw;
         border-radius: 10px;
         font-family: Arial, Helvetica, sans-serif;
-        
+
 
     }
 
-    
-      
-    .qtd_pd  {
+    .qtd_pd {
         margin: 0;
         padding: 0 15px;
         width: 60px;
         height: 25px;
         display: flex;
-        flex-direction: row; /* Orientação dos itens horizontalmente */
+        flex-direction: row;
+        /* Orientação dos itens horizontalmente */
         justify-content: center;
         align-items: center;
         border: 0.5px solid black;
         background-color: rgba(255, 225, 92, 0.521);
         border-radius: 3px;
-        
-    }
-   
-    @media only screen and (max-width: 1078px){
-        
-           
-    
-   #somaTotal {
-    
-    
-        
-     width: clamp(0px, 100%, 740px);
-        
-        bottom: 0;
-    
-        height: 60px;
-        left: auto;
-        border-radius: 0;
-        margin: 0px;
-        top: auto;
-      
-    }
-    .totalGeral{
-        display: flex;
-        justify-content: center;
-        left: 50%;
-        transform: translateX(6%);
-     
-        
-    }
-    main{  
-    
-       margin-bottom: 50px;
-        
-    }
-    .clicavel-past img {
-        width: 80%;
-        height: 70%;
-      
-
 
     }
 
-    .clicavel-bbd img {
-        width: 80%;
-        height: 100%;
-       
-    
+    @media only screen and (max-width: 1078px) {
 
-}
-.produto-single-bbd .clicavel-bbd .valor,
-.produto-single-past .clicavel-past .valor{
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    position: absolute;
-    bottom: 0;
-   left: 50%;
-   transform: translateX(-50%);
+        #somaTotal {
 
-}
-.produto-single-past{
+            width: clamp(0px, 100%, 740px);
+            bottom: 0;
+            height: 60px;
+            left: auto;
+            border-radius: 0;
+            margin: 0px;
+            top: auto;
 
-    font-size: 100%;
-    width: 50%;
-    height: 100%;
-    padding: 30px 10px 0 10px;
-    padding-bottom: 15%;
+        }
 
-  
-    }
-    
-.produto-single-bbd{
-    font-size: 100%;
-    width: 50%;
-    height: 80%;
-    padding: 30px 10px 0 10px;
-    padding-bottom: 25%;
-}
-    main #pedido {
-       margin-bottom: 50px;
+        .totalGeral {
+            display: flex;
+            justify-content: center;
+            left: 50%;
+            transform: translateX(6%);
 
-    }
-   
-        
+        }
 
-}
-@media only screen and (max-width: 400px){
+        main {
 
-    
-    main{
-        display: block;
-        flex-direction: column;
-    }
-    
-      
-    .produto-single-bbd{
-        
-        padding-bottom: 10%;
-        
-   
-    }
-     .clicavel-bbd img {
+            margin-bottom: 50px;
+
+        }
+
+        .clicavel-past img {
             width: 80%;
             height: 70%;
-    
-     }
-     #pasteis .produto-single-past,
-    #bebidas .produto-single-bbd {
-        width: 100%; /* Define a largura como 100% para ocupar a largura total da tela */
-        padding: 10px; /* Adiciona um espaçamento interno para melhor visualização */
-        box-sizing: border-box; /* Inclui padding no tamanho total do elemento */
+        }
+
+        .clicavel-bbd img {
+            width: 80%;
+            height: 100%;
+
+        }
+
+        .produto-single-bbd .clicavel-bbd .valor,
+        .produto-single-past .clicavel-past .valor {
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+
+        .produto-single-past {
+
+            font-size: 100%;
+            width: 50%;
+            height: 100%;
+            padding: 30px 10px 0 10px;
+            padding-bottom: 15%;
+
+        }
+
+        .produto-single-bbd {
+            font-size: 100%;
+            width: 50%;
+            height: 80%;
+            padding: 30px 10px 0 10px;
+            padding-bottom: 25%;
+        }
+
+        main #pedido {
+            margin-bottom: 50px;
+
+        }
     }
-}
+
+    @media only screen and (max-width: 400px) {
+
+        .produto-single-bbd {
+
+            padding-bottom: 10%;
+
+        }
+
+        .clicavel-bbd img {
+            width: 80%;
+            height: 70%;
+
+        }
+
+        .pd_pasteis,
+        .pd_bebidas {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .pd_pasteis .nome_pd,
+        .pd_bebidas .nome_pd {
+            align-self: end;
+            position: absolute;
+            left: 5px;
+            padding: 0;
+            margin: 0 15px;
+
+        }
+
+        .pd_pasteis .img_pd,
+        .pd_bebidas .img_pd {
+            margin-bottom: 30px;
+        }
+
+        .pd_pasteis .qtd_pd,
+        .pd_bebidas .qtd_pd {
+
+            margin: 0;
+            left: 40%;
+
+        }
+
+        .pd_pasteis .totais,
+        .pd_bebidas .totais {
+            left: 70%;
+        }
+
+        .totalGeral {
+
+            left: 50%;
+            transform: translateX(-3%);
+        }
+    }
