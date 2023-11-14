@@ -101,16 +101,19 @@
     .produto-single-bbd {
         position: relative;
         margin: 10px;
-        padding: 30px 20px;
-        width: 150px;
+        padding: 0px 30px;
+        padding-top: 20px;
+        padding-bottom: 12%;
+        width: 100%;
+        height: 100%;
         max-width: 150px;
         max-height: 30vh;
         background-color: white;
         color: black;
         display: flex;
         justify-content: center;
-        text-transform: uppercase;
         border-radius: 10px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     }
 
@@ -119,6 +122,8 @@
         transition: 0, 8s;
         background-color: #F0B526;
         color: #BD6E00;
+        
+       
 
 
     }
@@ -126,8 +131,9 @@
     .clicavel-bbd,
     .clicavel-past {
         text-align: center;
-        font-weight: bold;
+        font-weight: 500;
         cursor: pointer;
+        
        
 
     }
@@ -148,12 +154,6 @@
        
 
     }
-
-
-
-    
-    
-
 
     .quantidade {
         background-color: rgb(75, 157, 233);
@@ -189,9 +189,6 @@
         margin: 0;
         padding: 0;
         max-width: 80%;
-
-
-
 
 
     }
@@ -248,7 +245,7 @@
         margin: 0;
         padding:0;
         width: 30px;
-        font-size: 15px;
+        font-size: 16px;
         text-align: center;
         border: none;
         background-color: transparent;
@@ -312,45 +309,93 @@
     .totalGeral{
         display: flex;
         justify-content: center;
-        left: 100%;
+        left: 50%;
+        transform: translateX(6%);
      
         
     }
-    main{
-       
-       
-        
-       
+    main{  
+    
        margin-bottom: 50px;
-       
+        
     }
     .clicavel-past img {
-        width: 100px;
-        height: 70px;
+        width: 80%;
+        height: 70%;
       
 
 
     }
 
     .clicavel-bbd img {
-        max-width: 50px;
-        max-height: 70px;
+        width: 80%;
+        height: 100%;
        
     
 
 }
-.produto-single-past,
-.produto-single-bbd {
+.produto-single-bbd .clicavel-bbd .valor,
+.produto-single-past .clicavel-past .valor{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
 
-    font-size: 1em;
+}
+.produto-single-past{
 
-    padding: 30px 20px 0 20px;
+    font-size: 100%;
+    width: 50%;
+    height: 100%;
+    padding: 30px 10px 0 10px;
+    padding-bottom: 15%;
+
   
     }
+    
+.produto-single-bbd{
+    font-size: 100%;
+    width: 50%;
+    height: 80%;
+    padding: 30px 10px 0 10px;
+    padding-bottom: 25%;
+}
     main #pedido {
        margin-bottom: 50px;
 
     }
-    
+   
         
+
+}
+@media only screen and (max-width: 400px){
+
+    
+    main{
+        display: block;
+        flex-direction: column;
+    }
+    
+      
+    .produto-single-bbd{
+        
+        padding-bottom: 10%;
+        
+   
+    }
+     .clicavel-bbd img {
+            width: 80%;
+            height: 70%;
+    
+     }
+     #pasteis .produto-single-past,
+    #bebidas .produto-single-bbd {
+        width: 100%; /* Define a largura como 100% para ocupar a largura total da tela */
+        padding: 10px; /* Adiciona um espaçamento interno para melhor visualização */
+        box-sizing: border-box; /* Inclui padding no tamanho total do elemento */
+    }
 }

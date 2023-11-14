@@ -24,9 +24,9 @@ function adicionarItensPedido() {
                         <p class="img_pd"><img src=${imgBebida} width="50px"></p>
                         <p class="nome_pd">${nomeBebida}</p>
                         <div class="qtd_pd">
+                        <p class="diminuir"><input type="button" value="-"></p>
+                        <p class="qtd"><input type="text" value="${quantidade}" min="1"></p>
                             <p class="aumentar"><input type="button" value="+"></p>
-                            <p class="qtd"><input type="text" value="${quantidade}" min="1"></p>
-                            <p class="diminuir"><input type="button" value="-"></p>
                         </div>
                         <p class="totais"> Total R$ ${valorTotalFormatado} </p>
                     </div>
@@ -90,9 +90,11 @@ function adicionarItensPedido() {
                         <p class="img_pd"><img src=${imgPasteis} width="50px"></p>
                         <p class="nome_pd">${nomePasteis}</p>
                         <div class="qtd_pd">
+                        <p class="diminuir"><input type="button" value="-"></p>
+                        <p class="qtd"><input type="text" value="${quantidade}" min="1"></p>
                             <p class="aumentar"><input type="button" value="+"></p>
-                            <p class="qtd"><input type="text" value="${quantidade}" min="1"></p>
-                            <p class="diminuir"><input type="button" value="-"></p>
+                            
+                           
                         </div>
                         <p class="totais"> Total R$ ${valorTotalFormatado} </p>
                     </div>

@@ -88,7 +88,7 @@ inicializarBebidas = () => {
                 <span class="quantidade">${val.quantidade}</span>
                 <img src="${val.img}"/>
                 <p>${val.nome}</p>
-                <p>${val.valor}</p>
+                <p class="valor">${val.valor}</p>
             </div>
             <button class="diminuir-qtd" data-key=${val.id}>-</button>
         `;
