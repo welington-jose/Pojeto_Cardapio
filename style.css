@@ -99,11 +99,11 @@
         margin: 10px;
         padding: 0px 30px;
         padding-top: 20px;
-        padding-bottom: 12%;
+        padding-bottom: 15%;
         width: 100%;
         height: 100%;
         max-width: 150px;
-        max-height: 30vh;
+        max-height: 25vh;
         background-color: white;
         color: black;
         display: flex;
@@ -130,15 +130,15 @@
     }
 
     .clicavel-past img {
-        width: 180px;
-        height: 150px;
+        width: 100%;
+        height: 100%;
         border-radius: 10px;
 
     }
 
     .clicavel-bbd img {
-        max-width: 100px;
-        max-height: 150px;
+        max-width: 100%;
+        max-height: 100%;
         border-radius: 10px;
 
     }
@@ -269,6 +269,7 @@
         background-color: rgba(255, 225, 92, 0.521);
         border-radius: 3px;
 
+
     }
 
     @media only screen and (max-width: 1078px) {
@@ -305,7 +306,7 @@
         }
 
         .clicavel-bbd img {
-            width: 80%;
+            width: 50%;
             height: 100%;
 
         }
@@ -326,38 +327,44 @@
         .produto-single-past {
 
             font-size: 100%;
-            width: 50%;
-            height: 100%;
+            width: 100%;
             padding: 30px 10px 0 10px;
-            padding-bottom: 15%;
+            padding-bottom: 70px;
 
         }
 
         .produto-single-bbd {
             font-size: 100%;
-            width: 50%;
-            height: 80%;
+            width: 100%;
+            height: 50%;
             padding: 30px 10px 0 10px;
-            padding-bottom: 25%;
+            padding-bottom: 100px;
         }
 
-        main #pedido {
-            margin-bottom: 50px;
 
-        }
     }
 
     @media only screen and (max-width: 400px) {
 
+        main {
+            width: 100vw;
+        }
+
         .produto-single-bbd {
 
             padding-bottom: 10%;
+            width: 30%;
+        }
 
+        .produto-single-past {
+            width: 30%;
+            height: 130px;
+            padding-bottom: 22%;
         }
 
         .clicavel-bbd img {
-            width: 80%;
-            height: 70%;
+            width: 60%;
+            height: 60%;
 
         }
 
