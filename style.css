@@ -98,19 +98,24 @@
         position: relative;
         margin: 10px;
         padding: 0px 30px;
-        padding-top: 20px;
-        padding-bottom: 15%;
+        padding-top: 15px;
+        padding-bottom: 110px;
         width: 100%;
         height: 100%;
-        max-width: 150px;
-        max-height: 25vh;
+        max-width: 110px;
+        max-height: 80px;
         background-color: white;
         color: black;
         display: flex;
         justify-content: center;
         border-radius: 10px;
+        font-size: 100%;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+    }
+    .produto-single-past p,
+    .produto-single-bbd p{
+        margin: 0;
     }
 
     .produto-single-past:hover,
@@ -146,27 +151,30 @@
     .quantidade {
         background-color: rgb(75, 157, 233);
         color: white;
-        padding: 5px 10px;
-        border-radius: 25px;
+        padding: 5px 9px;
+        border-radius: 50%;
         position: absolute;
-        top: 5px;
-        right: 5px;
+        top: 1px;
+        right: 1px;
         font-weight: bold;
         visibility: hidden;
         cursor: pointer;
+        font-size: 12px;
     }
 
     .diminuir-qtd {
         background-color: rgb(255, 42, 5);
         color: white;
-        padding: 5px 10px;
+        padding: 1px 8px;
+        border-radius: 50%;
         border: none;
-        border-radius: 25px;
         position: absolute;
-        bottom: 10px;
-        left: 10px;
+        bottom: 5px;
+        left: 5px;
         font-weight: bold;
         cursor: pointer;
+        font-size: 16px;
+        
 
     }
 
@@ -224,6 +232,12 @@
         height: 75px;
         margin: 0 30px 0 20px;
     }
+    .pd_pasteis .nome_pd,
+    .pd_bebidas .nome_pd {
+        position: absolute;
+        align-items: center;
+        left: 90px;
+    }
 
     input {
 
@@ -268,9 +282,21 @@
         border: 0.5px solid black;
         background-color: rgba(255, 225, 92, 0.521);
         border-radius: 3px;
+    }
 
+    .valor{
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-bottom: 10px;
 
     }
+    
 
     @media only screen and (max-width: 1078px) {
 
@@ -301,8 +327,8 @@
         }
 
         .clicavel-past img {
-            width: 80%;
-            height: 70%;
+            width: 100%;
+            height: 100%;
         }
 
         .clicavel-bbd img {
@@ -311,8 +337,7 @@
 
         }
 
-        .produto-single-bbd .clicavel-bbd .valor,
-        .produto-single-past .clicavel-past .valor {
+        .valor {
             margin: 10px 0;
             display: flex;
             justify-content: center;
@@ -324,27 +349,16 @@
 
         }
 
-        .produto-single-past {
-
-            font-size: 100%;
-            width: 100%;
-            padding: 30px 10px 0 10px;
-            padding-bottom: 70px;
+        
+           
 
         }
 
-        .produto-single-bbd {
-            font-size: 100%;
-            width: 100%;
-            height: 50%;
-            padding: 30px 10px 0 10px;
-            padding-bottom: 100px;
-        }
+        
 
+    
 
-    }
-
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 525px)  {
 
         main {
             width: 100vw;
@@ -352,25 +366,28 @@
 
         .produto-single-bbd {
 
+            padding-top: 15px;
             padding-bottom: 10%;
             width: 30%;
+            padding-bottom: 20%;
         }
 
         .produto-single-past {
-            width: 30%;
-            height: 130px;
-            padding-bottom: 22%;
+           
+            padding-top: 15px;
+            padding-bottom: 27%;
         }
-
-        .clicavel-bbd img {
-            width: 60%;
-            height: 60%;
-
+        .produto-single-past img{
+            width: 110px;
+            height: 80px;
         }
+       
+
+        
 
         .pd_pasteis,
         .pd_bebidas {
-            display: flex;
+           
             align-items: center;
             margin: 0;
             padding: 0;
@@ -380,17 +397,12 @@
         .pd_pasteis .nome_pd,
         .pd_bebidas .nome_pd {
             align-self: end;
-            position: absolute;
-            left: 5px;
-            padding: 0;
-            margin: 0 15px;
+            left: 15px;
+           
 
         }
 
-        .pd_pasteis .img_pd,
-        .pd_bebidas .img_pd {
-            margin-bottom: 30px;
-        }
+        
 
         .pd_pasteis .qtd_pd,
         .pd_bebidas .qtd_pd {
@@ -410,4 +422,5 @@
             left: 50%;
             transform: translateX(-3%);
         }
+    
     }
