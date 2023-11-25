@@ -149,6 +149,7 @@ function adicionarItensPedido() {
 
 function somarPedido() {
     let totalPedido = 0;
+    let mensagemPedido = 'Pedido:\n';
 
     for (let i = 0; i < localStorage.length; i++) {
         const chave = localStorage.key(i);
@@ -181,11 +182,20 @@ function somarPedido() {
     const somaTotal = document.getElementById('somaTotal');
     if (somaTotal) {
         const TotalFormatado = totalPedido.toFixed(2).replace(/\./, ',');
-        somaTotal.innerHTML = `<p class="totalGeral"> R$ ${TotalFormatado}</p>`;
+        somaTotal.innerHTML = `<a class="totalGeral"> R$ ${TotalFormatado}</a>`;
         somaTotal.style.display = totalPedido < 1 ? 'none' : 'block';
 
     }
+    
+   // Adicione a mensagem do pedido ao link do WhatsApp
+   const linkWhatsapp = document.getElementById('somaTotal');
+   if (somaTotal) {
+       const phoneNumber = '+55 69 99270-1050'; // Substitua pelo seu número de telefone
+       const whatsappMessage = encodeURIComponent(mensagemPedido);
+       linkWhatsapp.href = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${whatsappMessage}`;
+   }
 }
+
 
 adicionarItensPedido(); // Adicionar itens ao pedido
 somarPedido(); // Calcular o valor total do pedido inicial
