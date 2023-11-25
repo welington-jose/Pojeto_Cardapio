@@ -182,18 +182,19 @@ function somarPedido() {
     const somaTotal = document.getElementById('somaTotal');
     if (somaTotal) {
         const TotalFormatado = totalPedido.toFixed(2).replace(/\./, ',');
-        somaTotal.innerHTML = `<a class="totalGeral"> R$ ${TotalFormatado}</a>`;
+        somaTotal.innerHTML = `<p class="totalGeral"> R$ ${TotalFormatado}</p>`;
         somaTotal.style.display = totalPedido < 1 ? 'none' : 'block';
 
     }
     
-   // Adicione a mensagem do pedido ao link do WhatsApp
-   const linkWhatsapp = document.getElementById('somaTotal');
-   if (somaTotal) {
-       const phoneNumber = '+55 69 99270-1050'; // Substitua pelo seu número de telefone
-       const whatsappMessage = encodeURIComponent(mensagemPedido);
-       linkWhatsapp.href = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${whatsappMessage}`;
-   }
+    somaTotal.addEventListener('click', ()=>{
+
+        var phoneNumber = '+55 69 99270-1050';
+        var message = 'pedido';
+        var whatsappLink = 'https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message);
+
+        window.open(whatsappLink, 'blank')
+    })
 }
 
 
