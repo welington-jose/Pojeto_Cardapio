@@ -149,7 +149,7 @@ function adicionarItensPedido() {
 
 function somarPedido() {
     let totalPedido = 0;
-    let mensagemPedido = 'Pedido:\n';
+    
 
     for (let i = 0; i < localStorage.length; i++) {
         const chave = localStorage.key(i);
@@ -189,11 +189,35 @@ function somarPedido() {
     
     somaTotal.addEventListener('click', ()=>{
 
-        var phoneNumber = '+55 69 99270-1050';
-        var message = 'pedido';
-        var whatsappLink = 'https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message);
+    var phoneNumber = '+55 69 99270-1050';
+       // Função para obter o texto formatado do pedido
+    function obterTextoDoPedido() {
+        const itensPedido = document.querySelectorAll('.pd_bebidas, .pd_pasteis');
+        let textoPedido = '';
 
-        window.open(whatsappLink, 'blank')
+        itensPedido.
+
+    
+forEach(item => {
+            const nome = item.querySelector('.nome_pd').innerText;
+            const quantidade = item.querySelector('.qtd input').value;
+            const total = item.querySelector('.totais').textContent;
+            
+            textoPedido += `${quantidade}      ${nome} ..........${total}\n`;
+           
+        });
+        const totalGeral = document.querySelector('.totalGeral');
+        if (totalGeral) {
+            const totalPedido = totalGeral.innerText;
+            textoPedido += `\nTotal Pedido - ${totalPedido}`;
+        }
+        return textoPedido.trim(); // Remover espaços em branco no início e no final
+    }
+
+    var mensagem = encodeURIComponent(obterTextoDoPedido());
+    var whatsappLink = 'https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + mensagem;
+
+    window.open(whatsappLink, 'blank');
     })
 }
 
