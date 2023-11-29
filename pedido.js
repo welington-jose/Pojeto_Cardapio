@@ -189,7 +189,7 @@ function somarPedido() {
     
     somaTotal.addEventListener('click', ()=>{
 
-    var phoneNumber = '+55 69 99270-1050';
+    var phoneNumber = '556999270-1050';
        // Função para obter o texto formatado do pedido
     function obterTextoDoPedido() {
         const itensPedido = document.querySelectorAll('.pd_bebidas, .pd_pasteis');
