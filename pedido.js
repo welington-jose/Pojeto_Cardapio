@@ -185,45 +185,48 @@ function somarPedido() {
         somaTotal.innerHTML = `<p class="totalGeral"> R$ ${TotalFormatado}</p>`;
         somaTotal.style.display = totalPedido < 1 ? 'none' : 'block';
 
-    }
+    
     
     somaTotal.addEventListener('click', ()=>{
 
-    var phoneNumber = '556999270-1050';
+    var phoneNumber = '5569992701050';
        // Função para obter o texto formatado do pedido
-    function obterTextoDoPedido() {
-        const itensPedido = document.querySelectorAll('.pd_bebidas, .pd_pasteis');
-        let textoPedido = '';
-
-        itensPedido.
-
+       const mensagem = encodeURIComponent(obterTextoDoPedido());
+       const whatsappLink = `https://wa.me/${phoneNumber}?text=${mensagem}`;
+       window.open(whatsappLink, '_blank');
+    });
+}
+}
     
-forEach(item => {
+function obterTextoDoPedido() {
+    const itensPedido = document.querySelectorAll('.pd_bebidas, .pd_pasteis');
+    let textoPedido = '';
+    let maxNomeLength = 0;
+
+    itensPedido.forEach(item => {
+        const nomeLength = item.querySelector('.nome_pd').innerText.length;
+        maxNomeLength = Math.max(maxNomeLength, nomeLength);
+           
+        });
+        itensPedido.forEach(item => {
             const nome = item.querySelector('.nome_pd').innerText;
             const quantidade = item.querySelector('.qtd input').value;
             const total = item.querySelector('.totais').textContent;
-            
-            textoPedido += `${quantidade}      ${nome} ..........${total}\n`;
-           
+    
+            const espacos = ' '.repeat(maxNomeLength - nome.length + 6);
+            textoPedido += `${quantidade} ${nome}${espacos}${total}\n`;
         });
         const totalGeral = document.querySelector('.totalGeral');
         if (totalGeral) {
             const totalPedido = totalGeral.innerText;
             textoPedido += `\nTotal Pedido - ${totalPedido}`;
         }
-        return textoPedido.trim(); // Remover espaços em branco no início e no final
+        return textoPedido.trim();
     }
+    
+    adicionarItensPedido();
+    somarPedido();
 
-    var mensagem = encodeURIComponent(obterTextoDoPedido());
-    var whatsappLink = 'https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + mensagem;
-
-    window.open(whatsappLink, 'blank');
-    })
-}
-
-
-adicionarItensPedido(); // Adicionar itens ao pedido
-somarPedido(); // Calcular o valor total do pedido inicial
 
 
 // Adicionar ouvintes de evento aos campos de entrada de quantidade
