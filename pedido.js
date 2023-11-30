@@ -213,7 +213,7 @@ function obterTextoDoPedido() {
             const quantidade = item.querySelector('.qtd input').value;
             const total = item.querySelector('.totais').textContent;
     
-            const espacos = '.'.repeat(maxNomeLength - nome.length + 30);
+            const espacos = '..'.repeat(maxNomeLength - nome.length + 1);
             textoPedido += `${quantidade} ${nome}${espacos}${total}\n`;
         });
         const totalGeral = document.querySelector('.totalGeral');
