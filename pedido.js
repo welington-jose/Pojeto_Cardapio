@@ -182,7 +182,7 @@ function somarPedido() {
     const somaTotal = document.getElementById('somaTotal');
     if (somaTotal) {
         const TotalFormatado = totalPedido.toFixed(2).replace(/\./, ',');
-        somaTotal.innerHTML = `<p class="totalGeral"> R$ ${TotalFormatado}</p>`;
+        somaTotal.innerHTML = `<p class="totalGeral align-right"> R$ ${TotalFormatado}</p>`;
         somaTotal.style.display = totalPedido < 1 ? 'none' : 'block';
 
     
@@ -213,7 +213,7 @@ function obterTextoDoPedido() {
             const quantidade = item.querySelector('.qtd input').value;
             const total = item.querySelector('.totais').textContent;
     
-            const espacos = ' '.repeat(maxNomeLength - nome.length + 6);
+            const espacos = '..'.repeat(maxNomeLength - nome.length + 10);
             textoPedido += `${quantidade} ${nome}${espacos}${total}\n`;
         });
         const totalGeral = document.querySelector('.totalGeral');
