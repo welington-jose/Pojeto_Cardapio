@@ -193,7 +193,7 @@ function somarPedido() {
        // Função para obter o texto formatado do pedido
        const mensagem = encodeURIComponent(obterTextoDoPedido());
        const whatsappLink = `https://wa.me/${phoneNumber}?text=${mensagem}`;
-       window.open(whatsappLink, '_blank');
+        window.open(whatsappLink, '_blank');
     });
 }
 }
@@ -203,17 +203,15 @@ function obterTextoDoPedido() {
     let textoPedido = '';
     let maxNomeLength = 0;
 
-    itensPedido.forEach(item => {
-        const nomeLength = item.querySelector('.nome_pd').innerText.length;
-        maxNomeLength = Math.max(maxNomeLength, nomeLength);
-           
-        });
+   
         itensPedido.forEach(item => {
             const nome = item.querySelector('.nome_pd').innerText;
             const quantidade = item.querySelector('.qtd input').value;
             const total = item.querySelector('.totais').textContent;
+            const nomeLength = item.querySelector('.nome_pd').innerText.length;
+            maxNomeLength = Math.max(maxNomeLength, nomeLength);
     
-            const espacos = '..'.repeat(maxNomeLength - nome.length + 9);
+            const espacos = ' .'.repeat(maxNomeLength - nome.length + 8);
             textoPedido += `${quantidade} ${nome}${espacos}${total}\n`;
         });
         const totalGeral = document.querySelector('.totalGeral');
