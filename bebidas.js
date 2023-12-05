@@ -163,11 +163,10 @@ diminuirBotao.forEach((botao) => {
         const botaoDiminuir = botao.parentElement.querySelector('.diminuir-qtd');
 
         if (bebidas[key].quantidade > 0) {
-            bebidas[key].quantidade--;
-            localStorage.setItem(`quantidade_bebidas_${key}`, bebidas[key].quantidade);
             botaoDiminuir.style.visibility = 'visible';
         } else {
             botaoDiminuir.style.visibility = 'hidden';
+        
         }
 
         if (quantidadeElement) {

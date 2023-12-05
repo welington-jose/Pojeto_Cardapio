@@ -75,7 +75,7 @@ const pasteis = [
 
 inicializarPasteis = () => {
 
-       
+
     var conteinerProdutos = document.getElementById('pasteis');
     pasteis.forEach((val) => {
         const produtoDiv = document.createElement('div');
@@ -100,7 +100,7 @@ inicializarPasteis = () => {
         }
 
         const savedQuantidade = localStorage.getItem(`quantidade_pasteis_${val.id}`);
-        
+
         if (savedQuantidade) {
             const quantidade = parseInt(savedQuantidade);
             if (!isNaN(quantidade)) {
@@ -114,15 +114,15 @@ inicializarPasteis = () => {
                 quantidadeElement.style.visibility = savedQuantidade > 0 ? 'visible' : 'hidden';
             }
 
-           
-           
+
+
         }
-        
-       
+
+
     });
 };
 
-inicializarPasteis ();
+inicializarPasteis();
 
 
 document.querySelectorAll('.clicavel-past').forEach((link) => {
@@ -145,7 +145,7 @@ document.querySelectorAll('.clicavel-past').forEach((link) => {
         localStorage.setItem(`valor_pasteis_${key}`, pasteis[key].valor);
         localStorage.setItem(`nome_pasteis_${key}`, pasteis[key].nome);
         localStorage.setItem(`img_pasteis_${key}`, pasteis[key].img);
-       
+
         return false;
     });
 });
@@ -174,7 +174,7 @@ diminuirBotao.forEach((botao) => {
         localStorage.setItem(`valor_pasteis_${key}`, pasteis[key].valor);
         localStorage.setItem(`nome_pasteis_${key}`, pasteis[key].nome);
         localStorage.setItem(`img_pasteis_${key}`, pasteis[key].img);
-        
+
     });
 });
 

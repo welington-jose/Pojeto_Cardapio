@@ -103,8 +103,8 @@ function adicionarItensPedido() {
                 pedido.appendChild(itemPedido); // Adicionar o item à exibição do pedido
 
                 // Adicionar um ouvinte de evento ao campo de entrada de quantidade
-               
-                 
+
+
                 const inputQuantidade = itemPedido.querySelector('input[type="text"]');
 
                 const aumentar = itemPedido.querySelector('.aumentar');
@@ -131,7 +131,7 @@ function adicionarItensPedido() {
 
                 inputQuantidade.addEventListener('input', () => {
                     const novaQuantidade = parseInt(inputQuantidade.value);
-                    
+
                     if (novaQuantidade <= 0) {
                         localStorage.removeItem(chave);
                         itemPedido.style.display = 'none'; // Ocultar o item no pedido
@@ -139,7 +139,7 @@ function adicionarItensPedido() {
                     localStorage.setItem(chave, novaQuantidade); // Atualizar a quantidade no armazenamento local
                     adicionarItensPedido();
                     somarPedido(); // Recriar a lista de itens no pedido
-                    
+
                 });
             }
         }
@@ -149,7 +149,7 @@ function adicionarItensPedido() {
 
 function somarPedido() {
     let totalPedido = 0;
-    
+
 
     for (let i = 0; i < localStorage.length; i++) {
         const chave = localStorage.key(i);
@@ -185,45 +185,45 @@ function somarPedido() {
         somaTotal.innerHTML = `<p class="totalGeral align-right"> R$ ${TotalFormatado}</p>`;
         somaTotal.style.display = totalPedido < 1 ? 'none' : 'block';
 
-    
-    
-    somaTotal.addEventListener('click', ()=>{
 
-    var phoneNumber = '5569992701050';
-       // Função para obter o texto formatado do pedido
-       const mensagem = encodeURIComponent(obterTextoDoPedido());
-       const whatsappLink = `https://wa.me/${phoneNumber}?text=${mensagem}`;
-        window.open(whatsappLink, '_blank');
-    });
+
+        somaTotal.addEventListener('click', () => {
+
+            var phoneNumber = '5569992701050';
+            // Função para obter o texto formatado do pedido
+            const mensagem = encodeURIComponent(obterTextoDoPedido());
+            const whatsappLink = `https://wa.me/${phoneNumber}?text=${mensagem}`;
+            window.open(whatsappLink, '_blank');
+        });
+    }
 }
-}
-    
+
 function obterTextoDoPedido() {
     const itensPedido = document.querySelectorAll('.pd_bebidas, .pd_pasteis');
     let textoPedido = '';
     let maxNomeLength = 0;
 
-   
-        itensPedido.forEach(item => {
-            const nome = item.querySelector('.nome_pd').innerText;
-            const quantidade = item.querySelector('.qtd input').value;
-            const total = item.querySelector('.totais').textContent;
-            const nomeLength = item.querySelector('.nome_pd').innerText.length;
-            maxNomeLength = Math.max(maxNomeLength, nomeLength);
-    
-            const espacos = ' .'.repeat(maxNomeLength - nome.length + 8);
-            textoPedido += `${quantidade} ${nome}${espacos}${total}\n`;
-        });
-        const totalGeral = document.querySelector('.totalGeral');
-        if (totalGeral) {
-            const totalPedido = totalGeral.innerText;
-            textoPedido += `\nTotal Pedido - ${totalPedido}`;
-        }
-        return textoPedido.trim();
+
+    itensPedido.forEach(item => {
+        const nome = item.querySelector('.nome_pd').innerText;
+        const quantidade = item.querySelector('.qtd input').value;
+        const total = item.querySelector('.totais').textContent;
+        const nomeLength = item.querySelector('.nome_pd').innerText.length;
+        maxNomeLength = Math.max(maxNomeLength, nomeLength);
+
+        const espacos = ' .'.repeat(maxNomeLength - nome.length + 8);
+        textoPedido += `${quantidade} ${nome}${espacos}${total}\n`;
+    });
+    const totalGeral = document.querySelector('.totalGeral');
+    if (totalGeral) {
+        const totalPedido = totalGeral.innerText;
+        textoPedido += `\nTotal Pedido - ${totalPedido}`;
     }
-    
-    adicionarItensPedido();
-    somarPedido();
+    return textoPedido.trim();
+}
+
+adicionarItensPedido();
+somarPedido();
 
 
 
