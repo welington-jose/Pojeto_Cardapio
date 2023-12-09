@@ -17,9 +17,6 @@
         position: absolute;
         margin: 0;
 
-
-
-
     }
 
     main #pedido {
@@ -33,6 +30,9 @@
 
         background-color: #f4f4f3;
 
+    }
+    a{
+        color: black;
     }
 
 
@@ -49,7 +49,6 @@
         position: fixed;
         z-index: 1000;
         background-color: #f4f4f3;
-        color: black;
         left: 0;
 
 
@@ -68,12 +67,13 @@
 
     .nav-list a {
         padding-block: 16px;
+        padding-inline: 10px;
         /* padding top e padding buttom*/
         font-weight: bold;
         text-transform: uppercase;
         text-decoration: none;
         justify-content: center;
-        color: black;
+       
 
     }
 
@@ -81,6 +81,7 @@
         color: white;
         background-color: #F0B526;
         border-radius: 10px;
+        padding-inline: 10px;
     }
 
     .menu {
@@ -129,30 +130,14 @@
 
     }
 
-
-
-
-    .select-past {
-        color: white;
+    .select-past, .select-bbd, .select-pedido {
         background-color: #F0B526;
+        color: white;
         border-radius: 10px;
         padding: 10px;
     }
 
-    .select-bbd {
-        color: white;
-        background-color: #F0B526;
-        border-radius: 10px;
-        padding: 10px;
-
-    }
-
-    .select-pedido {
-        color: white;
-        background-color: #F0B526;
-        border-radius: 10px;
-        padding: 10px;
-    }
+    
 
     #bebidas,
     #pasteis {
