@@ -10,24 +10,29 @@
 
 <body>
     <header>
-        <a href="pasteis.html">Pasteis</a>
-        <a href="bebidas.html">Bebidas</a>
-        <a class="select-pedido" href="#">Meu pedido</a>
-        <a class="inicial"href="inicial.html">
-            <img src="imagens/paginaInicial/desenhoPatel.png" alt="">
-        </a>
+
+        <nav class="nav">
+            <a class="logo"href="inicial.html">
+                <img src="imagens/paginaInicial/desenhoPatel.png" alt="">
+            </a>
+            <button class="menu"></button>
+            <ul class="nav-list">
+                <li><a href="pasteis.html">Pasteis</a></li>
+                <li><a href="bebidas.html">Bebidas</a></li>
+                <li><a class="select-pedido" href="#">Meu pedido</a></li>
+            </ul>
+            
+        </nav>
 
 
     </header>
-   <main>
+    <main>
         <div id="pedido"></div>
         <div id="somaTotal"></div>
-
     </main>
-
    
     
-        <script src="pedido.js"></script>
+        <script defer src="pedido.js"></script>
 </body>
 
 </html>

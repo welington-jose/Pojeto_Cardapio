@@ -232,6 +232,10 @@ const inputsQuantidade = document.querySelectorAll('input[type="text"]');
 inputsQuantidade.forEach((input) => {
     input.addEventListener('input', somarPedido); // Recalcular o valor total do pedido quando o input é alterado
 });
+const menu = document.querySelector(".menu");
+const nav = document.querySelector(".nav");
 
+menu.addEventListener("click", ()=>
+nav.classList.toggle("active"));
 
 
