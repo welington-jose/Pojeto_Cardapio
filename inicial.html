@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+    <!-- Meta e outros elementos do cabeçalho -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cardápio online</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-
+        <!-- Cabeçalho com links para as diferentes seções -->
         <nav class="nav">
-            <a class="logo"href="inicial.html">
+            <a class="logo" href="index.html">
                 <img src="imagens/paginaInicial/desenhoPatel.png" alt="">
             </a>
             <button class="menu"></button>
             <ul class="nav-list">
                 <li><a href="pasteis.html">Pasteis</a></li>
                 <li><a href="bebidas.html">Bebidas</a></li>
+                <!-- Adicione links para outras seções, se necessário -->
                 <li><a href="pedido.html">Meu pedido</a></li>
             </ul>
-            
         </nav>
-
-
     </header>
 
-    <script defer src="inicial.js"></script>
-</body>
-</html>
+    <main>
+        <!-- Área principal onde o conteúdo das páginas será carregado -->
+        <div id="content"></div>
+    </main>
 
+    <script defer src="main.js"></script> <!-- Adicione um script principal para gerenciar a navegação -->
+</body>
+
+</html>

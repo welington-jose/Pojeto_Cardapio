@@ -2,7 +2,7 @@ function adicionarItensPedido() {
     const pedido = document.getElementById('pedido');
     pedido.innerHTML = ''; // Limpar a exibição do pedido
 
-
+   
     for (let i = 0; i < localStorage.length; i++) {
         const chave = localStorage.key(i);
         if (chave.startsWith('quantidade_bebidas_')) {
@@ -109,6 +109,7 @@ function adicionarItensPedido() {
 
                 const aumentar = itemPedido.querySelector('.aumentar');
                 const diminuir = itemPedido.querySelector('.diminuir');
+                
 
                 aumentar.addEventListener('click', () => {
                     let novaQuantidade = parseInt(inputQuantidade.value) + 1;
@@ -135,6 +136,7 @@ function adicionarItensPedido() {
                     if (novaQuantidade <= 0) {
                         localStorage.removeItem(chave);
                         itemPedido.style.display = 'none'; // Ocultar o item no pedido
+                        
                     }
                     localStorage.setItem(chave, novaQuantidade); // Atualizar a quantidade no armazenamento local
                     adicionarItensPedido();
