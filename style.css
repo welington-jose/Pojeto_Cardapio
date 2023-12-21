@@ -6,6 +6,11 @@
         background-color: rgba(236, 234, 234, 0.548);
         display: flex;
         justify-content: center;
+        background-image: url(imagens/pagina/pasteis.jpg);
+        background-position: center;
+        background-size: cover;
+        
+
     }
 
 
@@ -13,18 +18,13 @@
         top: calc(0vh + 70px);
         
         width: 780px;
-        background-color: #fcd22838;
+        background-color: #fcd22856;
         border-radius: 5px;
         position: absolute;
         margin: 0;  
-        
+         
     }     
 
-
-    
-    
-   
-   
 
     main #pedido {
         display: flex;
@@ -364,7 +364,9 @@
 
     }
     
-
+ #pgInicial {
+    background-color: #F0B526;
+ }
     
 
 
