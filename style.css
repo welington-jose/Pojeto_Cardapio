@@ -3,7 +3,7 @@
         padding: 0;
         width: 98vw;
         height: 98vh;
-        background-color: rgba(236, 234, 234, 0.548);
+        background-color: #f4f4f3;
         display: flex;
         justify-content: center;
         background-position: center;
@@ -15,14 +15,18 @@
 
     main  {
         top: calc(0vh + 70px);
-        
-        width: 780px;
+        width: 52vw;
         background-color: #fcd22856;
         border-radius: 5px;
-        position: absolute;
         margin: 0;  
+        position: absolute;
          
-    }     
+    }    
+    main#corrocel-menu{
+        background-color: #f4f4f3;
+        width: 100vw;
+    }
+    
 
 
     main #pedido {
@@ -96,7 +100,7 @@
         border-top: 3px solid black;
         cursor: pointer;
         left: 80%;
-        position: absolute;
+       
         
 
     }
@@ -359,22 +363,26 @@
     }
     
  #pgInicial {
-    background-color: #F7E8AE;
+    background-color: #f4f4f3;
     
  }
  
 #carouselExampleIndicators {
     
-    background-color: #F7E8AE;
-    padding-top: 10%;
+    background-color: #f4f4f3;
+    padding-top: 7%;
+    width: 100vw;
    
  }
+ 
+
 
     
- .carousel-inner img {
-    height: 300px; /* Defina a altura desejada */
-    object-fit: cover;
-
+ .carousel-inner img{
+    height: 45vh; /* Defina a altura desejada */
+    border-radius: 5px;
+    background-color: #f4f4f3;
+    
  }
  
  .carousel-control-prev,
@@ -603,4 +611,5 @@
         }
 
 
+    }
     }
